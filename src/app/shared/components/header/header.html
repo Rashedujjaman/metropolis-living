@@ -1,0 +1,85 @@
+<header class="header" [class.scrolled]="isScrolled">
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        <!-- Logo -->
+        <div class="navbar-brand">
+          <a href="/" class="logo">
+            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=50&h=50&fit=crop&crop=center" alt="Metropolis Living" class="logo-img">
+            <span class="logo-text">Metropolis Living</span>
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="navbar-nav d-desktop">
+          <ul class="nav-links">
+            <li><a href="#home" class="nav-link" (click)="scrollTo('hero')">Home</a></li>
+            <li><a href="#about" class="nav-link" (click)="scrollTo('about')">About</a></li>
+            <li><a href="#services" class="nav-link" (click)="scrollTo('services')">Services</a></li>
+            <li><a href="#projects" class="nav-link" (click)="scrollTo('projects')">Projects</a></li>
+            <li><a href="#contact" class="nav-link" (click)="scrollTo('contact')">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Social Links & CTA -->
+        <div class="navbar-actions d-desktop">
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+          <button class="btn btn-primary btn-sm ml-3" (click)="scrollTo('contact')">
+            Get Started
+          </button>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button 
+          class="mobile-menu-toggle d-mobile d-tablet" 
+          [class.active]="isMobileMenuOpen"
+          (click)="toggleMobileMenu()"
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" [class.active]="isMobileMenuOpen">
+    <div class="mobile-menu-content">
+      <ul class="mobile-nav-links">
+        <li><a href="#home" class="mobile-nav-link" (click)="scrollToMobile('hero')">Home</a></li>
+        <li><a href="#about" class="mobile-nav-link" (click)="scrollToMobile('about')">About</a></li>
+        <li><a href="#services" class="mobile-nav-link" (click)="scrollToMobile('services')">Services</a></li>
+        <li><a href="#projects" class="mobile-nav-link" (click)="scrollToMobile('projects')">Projects</a></li>
+        <li><a href="#contact" class="mobile-nav-link" (click)="scrollToMobile('contact')">Contact</a></li>
+      </ul>
+      
+      <div class="mobile-social-links">
+        <a href="#" class="mobile-social-link" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="mobile-social-link" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="mobile-social-link" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+      
+      <button class="btn btn-primary btn-lg mobile-cta" (click)="scrollToMobile('contact')">
+        Get Started
+      </button>
+    </div>
+  </div>
+</header>
