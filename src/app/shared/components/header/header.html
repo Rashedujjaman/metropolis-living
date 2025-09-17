@@ -1,17 +1,81 @@
-﻿<header class="header" [class.scrolled]="isScrolled">
+﻿<!--
+  ===============================================
+  HEADER COMPONENT TEMPLATE
+  ===============================================
+  
+  Main navigation header with responsive design
+  Features:
+  - Fixed positioning with scroll-based styling
+  - Responsive navigation (desktop/mobile)
+  - Smooth scrolling to page sections
+  - Animated mobile menu toggle
+  - Accessibility-compliant structure
+  
+  @component Header
+  @author Metropolis Living Team
+  @version 1.0.0
+-->
+
+<!-- 
+  MAIN HEADER CONTAINER
+  - Fixed positioned header with dynamic scroll class
+  - [class.scrolled] binding adds shadow when user scrolls down
+  - Provides global navigation across all pages
+-->
+<header class="header" [class.scrolled]="isScrolled">
+  
+  <!-- 
+    NAVIGATION WRAPPER
+    - Contains all navigation elements within responsive container
+    - Semantic nav element for accessibility and SEO
+  -->
   <nav class="navbar">
+    
+    <!-- 
+      RESPONSIVE CONTAINER
+      - Centers content and applies max-width constraints
+      - Consistent spacing across different screen sizes
+    -->
     <div class="container">
+      
+      <!-- 
+        NAVBAR CONTENT LAYOUT
+        - Flexbox container for logo and navigation alignment
+        - Space-between layout: logo left, navigation right
+      -->
       <div class="navbar-content">
-        <!-- Logo -->
+        
+        <!-- 
+          BRAND LOGO SECTION
+          - Company branding with logo image
+          - Links to home page for easy navigation
+          - Maintains brand consistency across pages
+        -->
         <div class="navbar-brand">
           <a href="/" class="logo">
+            <!-- 
+              Logo Image
+              - Alt text for accessibility and SEO
+              - Proper semantic markup for screen readers
+            -->
             <img src="logo.png" alt="Metropolis Living" class="logo-img">
           </a>
         </div>
 
-        <!-- Desktop Navigation -->
-        <div class="navbar-nav d-desktop">
+        <!-- 
+          DESKTOP NAVIGATION MENU
+          - Hidden on mobile devices (<1024px)
+          - Horizontal navigation for larger screens
+          - Smooth scrolling to page sections
+        -->
+        <div class="navbar-nav">
           <ul class="nav-links">
+            <!-- 
+              Navigation Links with Smooth Scrolling
+              - (click) handlers trigger smooth scroll to sections
+              - href attributes provide fallback for accessibility
+              - Each link targets specific page sections
+            -->
             <li><a href="#home" class="nav-link" (click)="scrollTo('hero')">Home</a></li>
             <li><a href="#about" class="nav-link" (click)="scrollTo('about')">About</a></li>
             <li><a href="#services" class="nav-link" (click)="scrollTo('services')">Services</a></li>
@@ -19,50 +83,68 @@
           </ul>
         </div>
 
-        <!-- Mobile Menu Toggle -->
+        <!-- 
+          MOBILE MENU TOGGLE BUTTON
+          - Three-line hamburger icon that transforms to X when active
+          - [class.active] binding controls animation state
+          - Utility classes control visibility on different devices
+          - ARIA label for accessibility compliance
+        -->
         <button 
           class="mobile-menu-toggle d-mobile d-tablet" 
           [class.active]="isMobileMenuOpen"
           (click)="toggleMobileMenu()"
           aria-label="Toggle menu"
         >
+          <!-- 
+            Hamburger Menu Lines
+            - Three spans create the classic hamburger icon
+            - CSS transforms these into X icon when active
+          -->
           <span></span>
           <span></span>
           <span></span>
         </button>
+        
       </div>
     </div>
   </nav>
 
-  <!-- Mobile Menu -->
+  <!-- 
+    MOBILE NAVIGATION OVERLAY
+    - Full-width dropdown menu for mobile devices
+    - [class.active] binding controls slide-in animation
+    - Hidden by default, shown when hamburger is clicked
+  -->
   <div class="mobile-menu" [class.active]="isMobileMenuOpen">
+    
+    <!-- 
+      Mobile Menu Content Container
+      - Proper padding and scrollable content
+      - Optimized for touch interactions
+    -->
     <div class="mobile-menu-content">
+      
+      <!-- 
+        Mobile Navigation Links
+        - Vertical layout optimized for mobile
+        - Same functionality as desktop nav but mobile-friendly
+        - Auto-closes menu after selection for better UX
+      -->
       <ul class="mobile-nav-links">
+        <!-- 
+          Mobile Nav Items with Auto-Close
+          - scrollToMobile() handles both scrolling and menu closing
+          - Larger touch targets for mobile usability
+          - Consistent navigation functionality across devices
+        -->
         <li><a href="#home" class="mobile-nav-link" (click)="scrollToMobile('hero')">Home</a></li>
         <li><a href="#about" class="mobile-nav-link" (click)="scrollToMobile('about')">About</a></li>
         <li><a href="#services" class="mobile-nav-link" (click)="scrollToMobile('services')">Services</a></li>
-        <li><a href="#projects" class="mobile-nav-link" (click)="scrollToMobile('projects')">Projects</a></li>
         <li><a href="#contact" class="mobile-nav-link" (click)="scrollToMobile('contact')">Contact</a></li>
       </ul>
       
-      <div class="mobile-social-links">
-        <a href="#" class="mobile-social-link" aria-label="Facebook">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" class="mobile-social-link" aria-label="Twitter">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="#" class="mobile-social-link" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="#" class="mobile-social-link" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
-      </div>
-      
-      <button class="btn btn-primary btn-lg mobile-cta" (click)="scrollToMobile('contact')">
-        Get Started
-      </button>
     </div>
   </div>
+  
 </header>

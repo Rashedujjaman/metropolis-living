@@ -1,247 +1,450 @@
-// Header Styles
+/**
+ * ===============================================
+ * HEADER COMPONENT STYLES
+ * ===============================================
+ * 
+ * This file contains all styles for the main navigation header component.
+ * Features:
+ * - Fixed positioning with blur backdrop
+ * - Responsive navigation (desktop/mobile)
+ * - Animated hamburger menu toggle
+ * - Smooth scrolling effects
+ * - Professional hover animations
+ * 
+ * @author Metropolis Living Team
+ * @version 1.0.0
+ */
+
+/* ===== MAIN HEADER CONTAINER ===== */
+/**
+ * Fixed header with glassmorphism effect
+ * - Positioned at the top of viewport
+ * - High z-index for proper layering
+ * - Backdrop blur for modern aesthetic
+ * - Dynamic shadow on scroll
+ */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
-  background-color: #f1efec;
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--secondary-light-gray);
-  transition: var(--transition-normal);
+  z-index: 1000; /* Ensures header stays above other content */
+  background-color: #f1efec; /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Modern glassmorphism effect */
+  border-bottom: 1px solid var(--secondary-light-gray); /* Subtle bottom border */
+  transition: var(--transition-normal); /* Smooth property transitions */
 
+  /**
+   * Enhanced shadow when user scrolls
+   * Adds depth and visual hierarchy
+   */
   &.scrolled {
-    background-color: var(--white);
     box-shadow: var(--shadow-lg);
   }
 }
 
+/* ===== NAVBAR WRAPPER ===== */
+/**
+ * Main navigation container with adaptive padding
+ * - Reduces padding when scrolled for space efficiency
+ * - Smooth transitions for user experience
+ */
 .navbar {
-  padding: 1rem 0;
+  padding: 1rem 0; /* Default padding for spacing */
   transition: var(--transition-normal);
 
+  /**
+   * Compressed padding state when header is scrolled
+   * Provides more content space while maintaining usability
+   */
   .header.scrolled & {
     padding: 0.75rem 0;
   }
 }
 
+/* ===== NAVBAR CONTENT LAYOUT ===== */
+/**
+ * Flexbox layout for header content alignment
+ * - Logo positioned on the left
+ * - Navigation/menu toggle on the right
+ * - Perfect space distribution
+ */
 .navbar-content {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: center; /* Vertical alignment of all elements */
+  justify-content: space-between; /* Distributes items to ends */
+  width: 100%; /* Ensures full container width utilization */
 }
 
-// ===== LOGO =====
+/* ===== BRAND LOGO SECTION ===== */
+/**
+ * Logo container and styling
+ * - Flexible logo display with image and text support
+ * - Hover effects for interactive feedback
+ * - Optimized image rendering
+ */
 .navbar-brand {
+  /**
+   * Main logo link styling
+   * - Flex layout for logo image and text alignment
+   * - Professional typography with brand colors
+   * - Smooth hover transitions
+   */
   .logo {
     display: flex;
-    align-items: center;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.5rem;
-    color: var(--primary-dark);
-    transition: var(--transition-fast);
+    align-items: center; /* Vertically centers logo elements */
+    text-decoration: none; /* Removes default link underline */
+    font-weight: 600; /* Semi-bold for brand prominence */
+    font-size: 1.5rem; /* Readable logo text size */
+    color: var(--primary-dark); /* Brand primary color */
+    transition: var(--transition-fast); /* Smooth hover animations */
 
+    /**
+     * Logo hover state
+     * Provides visual feedback on user interaction
+     */
     &:hover {
-      color: var(--primary-gold);
+      color: var(--primary-gold); /* Brand accent color on hover */
     }
   }
 
+  /**
+   * Logo image optimization
+   * - Consistent sizing across devices
+   * - Proper image rendering
+   * - Fallback background for loading states
+   */
   .logo-img {
-    height: 40px;
-    margin-right: var(--spacing-sm);
-    object-fit: cover;
-    background-color: #f0f0f0;
+    height: 40px; /* Fixed height for consistency */
+    margin-right: var(--spacing-sm); /* Space between image and text */
+    object-fit: cover; /* Maintains aspect ratio */
+    background-color: #f0f0f0; /* Loading state background */
   }
 }
 
-// ===== DESKTOP NAVIGATION =====
+/* ===== DESKTOP NAVIGATION ===== */
+/**
+ * Primary navigation for desktop/tablet devices (≥1024px)
+ * - Auto-margin pushes navigation to the right
+ * - Horizontal menu layout with proper spacing
+ * - Advanced hover animations with underline effects
+ */
 .navbar-nav {
+  margin-left: auto; /* Pushes navigation to the right side */
+  
+  /**
+   * Navigation links container
+   * - Horizontal flex layout for menu items
+   * - Consistent spacing between navigation items
+   * - Clean list styling reset
+   */
   .nav-links {
     display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: var(--spacing-lg);
+    list-style: none; /* Removes default list bullets */
+    margin: 0; /* Resets default margins */
+    padding: 0; /* Resets default padding */
+    gap: var(--spacing-xxl); /* Generous spacing between nav items */
 
+    /**
+     * Individual list items
+     * Reset any inherited spacing
+     */
     li {
       margin: 0;
     }
 
+    /**
+     * Navigation link styling with advanced hover effects
+     * - Professional typography and spacing
+     * - Smooth color transitions
+     * - Animated underline on hover (::after pseudo-element)
+     */
     .nav-link {
-      color: var(--primary-dark);
-      font-weight: 500;
-      font-size: 1rem;
-      text-decoration: none;
-      padding: var(--spacing-xs) 0;
-      position: relative;
-      transition: var(--transition-fast);
+      color: var(--primary-dark); /* Default link color */
+      font-weight: 500; /* Medium weight for readability */
+      font-size: 1rem; /* Standard readable font size */
+      text-decoration: none; /* Removes default underline */
+      padding: var(--spacing-xs) 0; /* Vertical padding for click area */
+      position: relative; /* Required for ::after pseudo-element positioning */
+      transition: var(--transition-fast); /* Smooth color changes */
 
+      /**
+       * Hover state color change
+       * Provides immediate visual feedback
+       */
       &:hover {
-        color: var(--primary-gold);
+        color: var(--primary-gold); /* Brand accent color */
       }
 
+      /**
+       * Animated underline effect using pseudo-element
+       * - Initially hidden (width: 0)
+       * - Expands on hover for elegant animation
+       * - Positioned at bottom of link text
+       */
       &::after {
-        content: '';
+        content: ''; /* Required for pseudo-element display */
         position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: 0;
-        left: 0;
-        background-color: var(--primary-gold);
-        transition: var(--transition-fast);
+        width: 0; /* Initial state - hidden */
+        height: 2px; /* Underline thickness */
+        bottom: 0; /* Positioned at bottom of text */
+        left: 0; /* Starts from left edge */
+        background-color: var(--primary-gold); /* Brand accent color */
+        transition: var(--transition-fast); /* Smooth width animation */
       }
 
+      /**
+       * Hover state for animated underline
+       * Expands underline to full width
+       */
       &:hover::after {
-        width: 100%;
+        width: 100%; /* Full width underline on hover */
       }
     }
   }
 }
 
-// ===== MOBILE MENU TOGGLE =====
+/* ===== MOBILE MENU TOGGLE BUTTON ===== */
+/**
+ * Hamburger menu button for mobile devices (<1024px)
+ * - Three-line hamburger icon with smooth animations
+ * - Transforms to X icon when menu is active
+ * - Auto-positioned to the right on mobile layouts
+ * - Accessible button with proper touch target size
+ */
 .mobile-menu-toggle {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  gap: 4px;
+  flex-direction: column; /* Stacks hamburger lines vertically */
+  justify-content: center; /* Centers lines vertically within button */
+  width: 30px; /* Adequate touch target width */
+  height: 30px; /* Adequate touch target height */
+  background: transparent; /* No background for clean appearance */
+  border: none; /* Removes default button border */
+  cursor: pointer; /* Indicates interactive element */
+  padding: 0; /* Removes default button padding */
+  gap: 4px; /* Space between hamburger lines */
+  margin-left: auto; /* Pushes toggle to the right on mobile */
 
+  /**
+   * Individual hamburger lines
+   * - Full width within button container
+   * - Consistent styling and smooth transitions
+   * - Rounded edges for modern appearance
+   */
   span {
-    width: 100%;
-    height: 3px;
-    background-color: var(--primary-dark);
-    transition: var(--transition-fast);
-    border-radius: 2px;
+    width: 100%; /* Full width of button container */
+    height: 3px; /* Line thickness */
+    background-color: var(--primary-dark); /* Brand primary color */
+    transition: var(--transition-fast); /* Smooth transformations */
+    border-radius: 2px; /* Rounded line edges */
   }
 
+  /**
+   * Active state animations (menu open)
+   * Transforms hamburger lines into X icon
+   * - Top line: rotates and moves to center
+   * - Middle line: fades out completely
+   * - Bottom line: rotates in opposite direction and moves to center
+   */
   &.active {
+    /**
+     * Top line transformation
+     * Rotates 45° and translates to form top part of X
+     */
     span:nth-child(1) {
       transform: rotate(45deg) translate(6px, 6px);
     }
     
+    /**
+     * Middle line transformation
+     * Completely fades out for clean X appearance
+     */
     span:nth-child(2) {
       opacity: 0;
     }
     
+    /**
+     * Bottom line transformation
+     * Rotates -45° and translates to form bottom part of X
+     */
     span:nth-child(3) {
       transform: rotate(-45deg) translate(6px, -6px);
     }
   }
 }
 
-// ===== MOBILE MENU =====
+/* ===== MOBILE MENU OVERLAY ===== */
+/**
+ * Full-width mobile navigation overlay
+ * - Slides down from header when activated
+ * - Smooth opacity and transform transitions
+ * - Proper z-index layering below header
+ * - Hidden by default, shown with .active class
+ */
 .mobile-menu {
-  position: fixed;
-  top: 100%;
+  position: fixed; /* Fixed positioning for overlay effect */
+  top: 100%; /* Initially positioned below viewport */
   left: 0;
   right: 0;
-  background-color: var(--white);
-  border-top: 1px solid var(--secondary-light-gray);
-  transform: translateY(-100%);
-  opacity: 0;
-  visibility: hidden;
-  transition: all var(--transition-normal);
-  z-index: 999;
+  background-color: var(--white); /* Solid background for readability */
+  border-top: 1px solid var(--secondary-light-gray); /* Separator from header */
+  transform: translateY(-100%); /* Hidden above viewport initially */
+  opacity: 0; /* Invisible in closed state */
+  visibility: hidden; /* Prevents interaction when closed */
+  transition: all var(--transition-normal); /* Smooth open/close animation */
+  z-index: 999; /* Below header but above other content */
 
+  /**
+   * Active state (menu open)
+   * - Slides into view
+   * - Becomes fully visible and interactive
+   */
   &.active {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
+    transform: translateY(0); /* Slides into viewport */
+    opacity: 1; /* Fully visible */
+    visibility: visible; /* Allows interaction */
   }
 }
 
+/**
+ * Mobile menu content container
+ * - Proper padding for touch interfaces
+ * - Scrollable content for long menus
+ * - Viewport height consideration
+ */
 .mobile-menu-content {
-  padding: var(--spacing-lg);
-  max-height: calc(100vh - 80px);
-  overflow-y: auto;
+  padding: var(--spacing-lg); /* Generous padding for touch targets */
+  max-height: calc(100vh - 80px); /* Prevents menu from extending beyond screen */
+  overflow-y: auto; /* Allows scrolling for long menus */
 }
 
+/**
+ * Mobile navigation links styling
+ * - Vertical list layout optimized for touch
+ * - Clear visual separation between items
+ * - Enhanced hover effects for mobile interaction
+ */
 .mobile-nav-links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  margin-bottom: var(--spacing-lg);
+  list-style: none; /* Removes default list styling */
+  margin: 0; /* Resets default margins */
+  padding: 0; /* Resets default padding */
+  margin-bottom: var(--spacing-lg); /* Space below menu */
 
+  /**
+   * Individual menu items
+   * - Bottom border for visual separation
+   * - Proper spacing between items
+   */
   li {
     margin-bottom: var(--spacing-sm);
-    border-bottom: 1px solid var(--secondary-light-gray);
+    border-bottom: 1px solid var(--secondary-light-gray); /* Subtle divider */
   }
 
+  /**
+   * Mobile navigation links
+   * - Block display for full-width touch targets
+   * - Larger text for mobile readability
+   * - Smooth hover animations with indentation
+   */
   .mobile-nav-link {
-    display: block;
-    padding: var(--spacing-sm) 0;
-    font-size: 1.125rem;
-    font-weight: 500;
-    color: var(--primary-dark);
-    text-decoration: none;
-    transition: var(--transition-fast);
+    display: block; /* Full width clickable area */
+    padding: var(--spacing-sm) 0; /* Adequate touch target padding */
+    font-size: 1.125rem; /* Larger text for mobile readability */
+    font-weight: 500; /* Medium weight for emphasis */
+    color: var(--primary-dark); /* Brand primary color */
+    text-decoration: none; /* Removes default underline */
+    transition: var(--transition-fast); /* Smooth hover transitions */
 
+    /**
+     * Mobile link hover/active state
+     * - Color change for visual feedback
+     * - Left padding creates indentation effect
+     */
     &:hover {
-      color: var(--primary-gold);
-      padding-left: var(--spacing-sm);
+      color: var(--primary-gold); /* Brand accent color */
+      padding-left: var(--spacing-sm); /* Indentation for hover feedback */
     }
   }
 }
 
-.mobile-social-links {
-  display: flex;
-  justify-content: center;
-  gap: var(--spacing-md);
-  margin-bottom: var(--spacing-lg);
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+/**
+ * Mobile-first responsive design implementation
+ * - Mobile: <1024px (tablets and phones)
+ * - Desktop: ≥1024px (laptops and desktops)
+ * - Strategic display toggles for optimal UX
+ */
 
-  .mobile-social-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: var(--light-bg);
-    color: var(--primary-dark);
-    font-size: 1.125rem;
-    transition: var(--transition-fast);
-
-    &:hover {
-      background-color: var(--primary-gold);
-      color: var(--white);
-      transform: scale(1.1);
-    }
-  }
-}
-
-.mobile-cta {
-  width: 100%;
-  text-align: center;
-}
-
-// ===== RESPONSIVE =====
+/**
+ * MOBILE & TABLET STYLES (<1024px)
+ * - Hides desktop navigation
+ * - Shows mobile menu toggle
+ * - Ensures proper flex alignment
+ */
 @media (max-width: 1023px) {
+  /**
+   * Hide desktop navigation on smaller screens
+   * Preserves space and prevents UI conflicts
+   */
   .navbar-nav {
     display: none;
   }
   
+  /**
+   * Hide additional navbar actions if present
+   * Maintains clean mobile layout
+   */
   .navbar-actions {
     display: none;
   }
+  
+  /**
+   * Explicit space-between alignment for mobile
+   * Ensures logo stays left, toggle button stays right
+   */
+  .navbar-content {
+    justify-content: space-between;
+  }
 }
 
+/**
+ * DESKTOP STYLES (≥1024px)
+ * - Hides mobile menu toggle and overlay
+ * - Shows desktop navigation
+ * - Maintains proper flex alignment
+ */
 @media (min-width: 1024px) {
+  /**
+   * Hide mobile menu toggle on desktop
+   * !important overrides utility classes that may conflict
+   */
   .mobile-menu-toggle {
-    display: none;
+    display: none !important;
   }
   
+  /**
+   * Hide mobile menu overlay on desktop
+   * Prevents unnecessary DOM elements
+   */
   .mobile-menu {
     display: none;
   }
+  
+  /**
+   * Explicit space-between alignment for desktop
+   * Ensures logo stays left, navigation stays right
+   */
+  .navbar-content {
+    justify-content: space-between;
+  }
 }
 
-// ===== UTILITY CLASSES =====
+/* ===== UTILITY CLASSES ===== */
+/**
+ * Reusable spacing utilities for header components
+ * - Follows design system spacing scale
+ * - Maintains consistency across components
+ */
 .ml-3 {
-  margin-left: var(--spacing-md);
+  margin-left: var(--spacing-md); /* Medium left margin */
 }
