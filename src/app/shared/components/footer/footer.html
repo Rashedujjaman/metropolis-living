@@ -1,67 +1,149 @@
+<!--
+  ===============================================
+  FOOTER COMPONENT TEMPLATE
+  ===============================================
+  
+  Main site footer with comprehensive navigation and branding
+  Features:
+  - Multi-column responsive grid layout
+  - Company branding and logo display
+  - Navigation links for quick access
+  - Newsletter subscription functionality
+  - Copyright and legal information
+  - Triangular cutout design element
+  - Full-width bottom section
+  
+  @component Footer
+  @author Metropolis Living Team
+  @version 1.0.0
+-->
+
+<!-- 
+  MAIN FOOTER CONTAINER
+  - Uses semantic <footer> element for accessibility
+  - Multiple CSS classes for styling flexibility:
+    * .footer: Primary component styling with triangular cutout
+    * .bg-primary: Bootstrap background utility class
+    * .section-dark: Dark theme styling for contrast
+-->
 <footer class="footer bg-primary section-dark">
+  
+  <!-- 
+    FOOTER CONTENT CONTAINER
+    - Responsive container centers content with max-width
+    - Contains main footer grid and content sections
+  -->
   <div class="container">
-    <!-- Footer Top -->
+    
+    <!-- 
+      FOOTER TOP SECTION
+      - Primary content area with multi-column layout
+      - Houses company info, navigation, and newsletter
+    -->
     <div class="footer-top">
+      
+      <!-- 
+        FOOTER GRID LAYOUT
+        - CSS Grid system for responsive column layout
+        - Adapts from 4 columns (desktop) to 1 column (mobile)
+        - Equal spacing between columns for visual balance
+      -->
       <div class="footer-grid">
-        <!-- Company Info -->
+        
+        <!-- 
+          COMPANY BRANDING COLUMN
+          - Primary brand representation in footer
+          - Logo display with company identity
+          - First column for visual hierarchy importance
+        -->
         <div class="footer-column">
           <div class="footer-logo">
-            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=50&h=50&fit=crop&crop=center" alt="Metropolis Living" class="logo-img">
-            <span class="logo-text">Metropolis Living</span>
-          </div>
-          <p class="footer-description">
-            Connecting people, spaces & lifestyles. We are one of the most impactful urban real estate developer companies, creating exceptional living experiences in metropolitan areas.
-          </p>
-          <div class="footer-social">
-            <a href="#" class="footer-social-link" aria-label="Facebook">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="footer-social-link" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#" class="footer-social-link" aria-label="LinkedIn">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="#" class="footer-social-link" aria-label="Twitter">
-              <i class="fab fa-twitter"></i>
-            </a>
+            <!-- 
+              Company Logo
+              - Brand recognition and trust building
+              - Alt text for screen readers and SEO
+              - Links to homepage for easy navigation
+            -->
+            <img src="logo.png" alt="Metropolis Living" class="logo-img">
           </div>
         </div>
 
-        <!-- Quick Links -->
+        <!-- 
+          QUICK NAVIGATION COLUMN
+          - Essential site navigation links
+          - Provides quick access to main sections
+          - Improves site usability and SEO
+        -->
         <div class="footer-column">
           <h4 class="footer-heading">Quick Links</h4>
           <ul class="footer-links">
-            <li><a href="#hero" class="footer-link">Home</a></li>
-            <li><a href="#about" class="footer-link">About Us</a></li>
-            <li><a href="#services" class="footer-link">Services</a></li>
-            <li><a href="#projects" class="footer-link">Projects</a></li>
-            <li><a href="#testimonials" class="footer-link">Testimonials</a></li>
-            <li><a href="#blog" class="footer-link">Blog</a></li>
+            <!-- 
+              Navigation Links
+              - Internal site navigation for main sections
+              - Anchor links for smooth scrolling experience
+              - Consistent with main navigation structure
+            -->
+            <li><a href="#about" class="footer-link">About</a></li>
+            <li><a href="#services" class="footer-link">Service</a></li>
+            <li><a href="#projects" class="footer-link">Pricing</a></li>
+            <li><a href="#testimonials" class="footer-link">Contact</a></li>
           </ul>
         </div>
 
-        <!-- Services -->
+        <!-- 
+          SUPPORT & LEGAL COLUMN
+          - Legal compliance and user support links
+          - Essential for business credibility and legal protection
+          - Standard footer links expected by users
+        -->
         <div class="footer-column">
-          <h4 class="footer-heading">Services</h4>
+          <h4 class="footer-heading">Support</h4>
           <ul class="footer-links">
-            <li><a href="#" class="footer-link">Property Development</a></li>
-            <li><a href="#" class="footer-link">Property Management</a></li>
-            <li><a href="#" class="footer-link">Real Estate Consulting</a></li>
-            <li><a href="#" class="footer-link">Investment Advisory</a></li>
-            <li><a href="#" class="footer-link">Urban Planning</a></li>
-            <li><a href="#" class="footer-link">Architectural Design</a></li>
+            <!-- 
+              Legal and Support Links
+              - Terms & Conditions: Legal protection and user guidelines
+              - Privacy Policy: GDPR and privacy compliance
+              - FAQ: Self-service support resource
+              - Support: Direct help and contact information
+            -->
+            <li><a href="#" class="footer-link">Terms & Conditions</a></li>
+            <li><a href="#" class="footer-link">Privacy Policy</a></li>
+            <li><a href="#" class="footer-link">FAQ</a></li>
+            <li><a href="#" class="footer-link">Support</a></li>
           </ul>
         </div>
 
-        <!-- Newsletter -->
+        <!-- 
+          NEWSLETTER SUBSCRIPTION COLUMN
+          - Email marketing and user engagement
+          - Lead generation and customer retention
+          - Interactive form with Angular integration
+        -->
         <div class="footer-column">
-          <h4 class="footer-heading">Stay Updated</h4>
+          <!-- 
+            Newsletter Call-to-Action
+            - Engaging copy to encourage subscriptions
+            - Bold emphasis on 'Subscribe' for visual hierarchy
+          -->
           <p class="newsletter-text">
-            Subscribe to our newsletter and get the latest news about our projects and industry insights.
+            Stay Informed & <b class="subscribe">Subscribe</b> our blog!
           </p>
+          
+          <!-- 
+            Newsletter Subscription Form
+            - Angular reactive form with validation
+            - (ngSubmit) handles form submission
+            - Email capture for marketing campaigns
+          -->
           <form class="newsletter-form" (ngSubmit)="onSubscribe()">
             <div class="newsletter-input-group">
+              <!-- 
+                Email Input Field
+                - Two-way data binding with [(ngModel)]
+                - HTML5 email validation
+                - Required attribute for form validation
+                - Placeholder for user guidance
+              -->
               <input 
                 type="email" 
                 [(ngModel)]="email"
@@ -69,43 +151,49 @@
                 class="newsletter-input"
                 required
               >
+              
+              <!-- 
+                Submit Button
+                - Styled as integrated part of input group
+                - Bold text for emphasis and call-to-action
+                - Form submission triggers Angular method
+              -->
               <button type="submit" class="newsletter-btn">
-                <i class="fas fa-paper-plane"></i>
+                <b>Send</b>
               </button>
             </div>
           </form>
-          
-          <!-- Contact Info -->
-          <div class="footer-contact">
-            <div class="contact-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <span>123 Business District, Metro City, MC 12345</span>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-phone"></i>
-              <span>+1 (555) 123-4567</span>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <span>info&#64;metropolisliving.com</span>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-      <div class="footer-bottom-content">
-        <p class="copyright">
-          &copy; {{ currentYear }} Metropolis Living. All rights reserved.
-        </p>
-        <div class="footer-bottom-links">
-          <a href="#" class="footer-bottom-link">Privacy Policy</a>
-          <a href="#" class="footer-bottom-link">Terms of Service</a>
-          <a href="#" class="footer-bottom-link">Cookie Policy</a>
-        </div>
+        
       </div>
     </div>
   </div>
+  
+  <!-- 
+    FOOTER BOTTOM SECTION
+    - Full-width copyright and legal information
+    - Positioned outside main container for edge-to-edge styling
+    - Provides visual separation from main footer content
+  -->
+  <div class="footer-bottom">
+    <!-- 
+      Bottom Content Container
+      - Separate container for proper content alignment
+      - Centers copyright information within full-width section
+    -->
+    <div class="container">
+      <div class="footer-bottom-content">
+        <!-- 
+          Copyright Notice
+          - Legal copyright protection display
+          - Dynamic year binding with {{ currentYear }}
+          - Essential for business legal compliance
+        -->
+        <p class="copyright">
+          Copyright &copy; {{ currentYear }}.
+        </p>
+      </div>
+    </div>
+  </div>
+  
 </footer>

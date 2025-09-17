@@ -13,6 +13,12 @@ import { HomeDataService } from '../../services/home-data.service';
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private intersectionObserver!: IntersectionObserver;
 
+  // Hero section data
+  heroRating = {
+    score: 4.8,
+    text: 'High Rated'
+  };
+
   contactForm: ContactForm = {
     name: '',
     email: '',
