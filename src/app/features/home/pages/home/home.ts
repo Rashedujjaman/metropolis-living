@@ -3,21 +3,18 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Testimonial, Statistic, Project, Service, BlogPost, FAQ, ContactForm } from '../../models/home.model';
 import { HomeDataService } from '../../services/home-data.service';
+import { HeroComponent } from "../../components/hero-component";
 
 @Component({
   selector: 'app-home',
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, HeroComponent],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private intersectionObserver!: IntersectionObserver;
 
-  // Hero section data
-  heroRating = {
-    score: 4.8,
-    text: 'High Rated'
-  };
+
 
   contactForm: ContactForm = {
     name: '',
