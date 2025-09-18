@@ -214,10 +214,6 @@
                     transition: background-color 0.3s ease;
                     border-bottom: 1px solid transparent;
 
-                    &:hover {
-                        background: var(--color-very-light-grey);
-                    }
-
                     .question-text {
                         font-family: var(--font-heading);
                         font-size: 1.1rem;
@@ -230,8 +226,7 @@
                     .toggle-icon {
                         width: 30px;
                         height: 30px;
-                        border-radius: 50%;
-                        background: var(--color-very-light-grey);
+                        background: var(--black);
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -241,16 +236,11 @@
                         .icon {
                             font-size: 1.2rem;
                             font-weight: 600;
-                            color: var(--primary-dark);
+                            color: var(--white);
                             transition: all 0.3s ease;
-                        }
-
-                        &.open {
-                            background: var(--color-accent);
-                            transform: rotate(45deg);
-
-                            .icon {
-                                color: var(--white);
+                            
+                            &::before {
+                                content: "+";
                             }
                         }
                     }
@@ -278,8 +268,20 @@
 
                 &.active {
                     .faq-question {
+                        background: var(--white);
                         border-bottom: 1px solid var(--color-very-light-grey);
+                        
+                        .toggle-icon {
+                            background: red;
+                            
+                            .icon {
+                                &::before {
+                                    content: "−";
+                                }
+                            }
+                        }
                     }
+                }
                 }
             }
         }
@@ -480,4 +482,3 @@
             }
         }
     }
-}
