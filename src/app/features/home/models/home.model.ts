@@ -48,29 +48,10 @@ export interface Service {
   features: string[];
 }
 
-export interface BlogPost {
-  id: number;
-  title: string;
-  excerpt: string;
-  image: string;
-  category: string;
-  date: string;
-  author: string;
-  authorImage: string;
-}
 
 export interface FAQ {
   id: number;
   question: string;
   answer: string;
   isOpen?: boolean;
-}
-
-export interface ContactForm {
-  name: string;
-  email: string;
-  phone: string;
-  subject: string;
-  interest: string;
-  message: string;
 }

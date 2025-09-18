@@ -1,6 +1,3 @@
-// Shared Models
-export * from './models/common.model';
-
 // Shared Services
 export * from './services/loading.service';
 
