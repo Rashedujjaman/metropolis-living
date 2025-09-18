@@ -194,19 +194,40 @@
                         }
                     }
                 }
-
-                &::before {
-                    content: "";
-                    position: absolute;
-                    width: 20px;
-                    height: 20px;
-                    background: linear-gradient(135deg, var(--light-bg), var(--color-accent));
-                    bottom: -10px;
-                    left: -10px;
-                }
             }
         }
     }
+
+    .line-separator2 {
+        width: 100%;
+        height: 1px;
+        background-color: var(--secondary-gray);
+        margin: var(--spacing-xxl) 0;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background-color: var(--primary-orange);
+            top: -3px;
+            left: 50%;
+        }
+
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background-color: var(--primary-orange);
+            top: -3px;
+            left: 60%;
+        }
+    }
+
+    
 
     // Responsive Design - Mobile First Approach
     
@@ -337,6 +358,14 @@
                         }
                     }
                 }
+            }
+
+            &::after {
+                content: "";
+                height: 2px;
+                width: 100%;
+                background: var(--secondary-gray);
+                // clear: both;
             }
         }
     }
