@@ -1,0 +1,235 @@
+.services-section {
+
+    .header{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .col-1 {
+            flex: 2;
+
+            /* Interactive Bubbles Container: Animated brand elements */
+            .hero-bubbles {
+                display: flex;
+                position: relative;
+                height: 60px;
+                width: 90px;
+                
+                /* Individual Bubble Elements: Interactive circular components */
+                .hero-bubble {
+                    width: 60px;                        /* Consistent circular dimensions */
+                    height: 60px;
+                    border-radius: 50%;                 /* Perfect circle shape */
+                    transition: all 0.3s ease;          /* Smooth hover animations */
+                    cursor: pointer;                    /* Interactive feedback */
+                    
+                    /* Top Bubble: Light gradient with accent border */
+                    &.hero-bubble-top {
+                        background: linear-gradient(135deg, var(--light-bg), var(--primary-orange));
+                        border: 2px solid var(--primary-orange);    /* Accent border highlight */
+                        opacity: 0.8;                            /* Subtle transparency */
+                        position: absolute;                       /* Overlapping positioning */
+                        top: 0;
+                        left: 0;
+                        z-index: 1;                              /* Layer above bottom bubble */
+                    }
+                    
+                    /* Bottom Bubble: Dark solid with shadow depth */
+                    &.hero-bubble-bottom {
+                        position: absolute;                       /* Overlapping positioning */
+                        background: var(--white);                /* Solid dark background */
+                        opacity: 0.8;                           /* Consistent transparency */
+                        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Subtle depth shadow */
+                        top: 0;
+                        left: 30px;                             /* Offset for overlap effect */
+                    }
+
+                    /* Interactive States: Hover and focus effects */
+                    &:hover {
+                        transform: scale(1.1);                   /* Subtle scale animation */
+                        opacity: 1;                              /* Full opacity on interaction */
+                    }
+                }
+            }
+        }
+    
+        .col-2 {
+            flex: 1;
+
+            .section-subtitle {
+                font-family: var(--font-heading);
+                font-weight: 100;
+                font-size: 2rem;
+                line-height: 1;
+            }
+        }
+
+        .col-3 {
+            flex: 1;
+
+            .section-subtitle {
+                font-family: var(--font-heading);
+                font-weight: 100;
+                font-size: 2rem;
+                line-height: 1;
+            }
+        }
+    }
+
+
+    /* urban-layout.component.scss */
+    .urban-grid {
+        margin-top: var(--spacing-xl);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+    }
+
+    .grid-item {
+        background-color: #f5f5f5;
+        padding: 30px;
+        // font-family: 'Segoe UI', sans-serif;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .title {
+            font-size: 3rem;
+            font-weight: 100;
+            letter-spacing: 0;
+            color: var(--text-primary);
+
+            b {
+                font-weight: 600;
+            }
+        }
+
+        p {
+            font-size: 0.95rem;
+            color: var(--secondary-gray);
+        }
+    }
+
+    .logo-u {
+        width: 40px;
+        height: 40px;
+        background: url('https://lirp.cdn-website.com/50da28ab/dms3rep/multi/opt/W-Wreath-logo-cleaned-05-226w.png') no-repeat center;
+        background-size: contain;
+        margin-top: 10px;
+    }
+
+    .content-with-icon {
+        display: flex;
+        align-items: center;
+
+        .icon {
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-right: 10px;
+            background: black;
+            padding: 8px 16px;
+            border-bottom: 5px solid var(--primary-orange);
+        }
+
+        p {
+            margin: 0; /* Remove default margin for better alignment */
+        }
+    }
+
+    .top-right{
+        background: url('/grid_top_right.png');
+        background-size: cover;
+    }
+
+
+    .middle-left{
+        background: url('/grid_middle_left.png');
+        background-size: cover;
+    }
+
+    .middle-right{
+        display: grid;
+        grid-template-rows: 3fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        height: 100%;
+        padding: 0;
+
+        .title {
+            font-size: 2rem;
+            font-weight: 100;
+            letter-spacing: 0;
+            color: var(--text-primary);
+
+            b {
+                font-weight: 600;
+            }
+        }
+
+        p {
+            font-size: 0.95rem;
+            color: var(--secondary-gray);
+        }
+
+        .top-left{
+            background-size: cover;
+            grid-row: 1 / 2;
+            grid-column: 1 / 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 40px;
+        }
+        .top-right{
+            background: black;
+            background-size: cover;
+            grid-row: 1 / 2;
+            grid-column: 2 / 3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img{
+                width: 50%;
+                height: auto;
+            }
+        }
+        .bottom{
+            background-size: cover;
+            grid-row: 2 / 3;
+            grid-column: 1 / 3;
+            background: var(--primary-orange);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 40px;
+            color: white;
+
+            .content-with-icon {
+                display: flex;
+                align-items: center;
+
+                .icon {
+                    font-size: 1.5rem;
+                    color: var(--black);
+                    margin-right: 20px;
+                    background: white;
+                    padding: 4px 8px;
+                    border-bottom: 5px solid var(--black);
+                }
+
+                p {
+                    margin: 0;
+                    color: white;
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+
+    .bottom-right{
+        background: url('/grid_bottom_right.png');
+        background-size: cover;
+    }
+
+};

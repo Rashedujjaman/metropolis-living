@@ -5,13 +5,15 @@ import { Testimonial, Statistic, Project, Service, BlogPost, FAQ, ContactForm } 
 import { HomeDataService } from '../../services/home-data.service';
 import { HeroComponent } from "../../components/hero-component/hero-component";
 import { AboutComponent } from "../../components/about-component/about-component";
+import { ServicesComponent } from "../../components/services-component/services-component";
 
 @Component({
   selector: 'app-home',
-  imports: [FormsModule, CommonModule, HeroComponent, AboutComponent],
+  imports: [FormsModule, CommonModule, HeroComponent, AboutComponent, ServicesComponent],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })
+
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private intersectionObserver!: IntersectionObserver;
 
