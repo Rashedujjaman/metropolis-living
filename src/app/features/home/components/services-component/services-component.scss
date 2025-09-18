@@ -83,6 +83,25 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, auto);
+        position: relative;
+
+        &::after {
+            content: ">>";
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            height: 50px;
+            width: 50px;
+            background: var(--primary-orange);
+            color: white;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translateY(100%);
+            letter-spacing: -6px;
+            font-size: 1.5rem;
+        }
     }
 
     .grid-item {
@@ -231,5 +250,6 @@
         background: url('/grid_bottom_right.png');
         background-size: cover;
     }
+
 
 };
