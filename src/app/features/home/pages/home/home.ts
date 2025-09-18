@@ -18,17 +18,6 @@ import { ContactComponent } from "../../components/contact-component/contact-com
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private intersectionObserver!: IntersectionObserver;
 
-
-
-  contactForm: ContactForm = {
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    interest: '',
-    message: ''
-  };
-
   testimonials: Testimonial[] = [];
   projects: Project[] = [];
   featuredProjects: Project[] = [];
@@ -43,22 +32,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   toggleFaq(index: number): void {
     this.faqs[index].isOpen = !this.faqs[index].isOpen;
-  }
-
-  onSubmit(): void {
-    if (this.contactForm.name && this.contactForm.email && this.contactForm.message) {
-      console.log('Contact form submitted:', this.contactForm);
-      alert('Thank you for your message! We will get back to you soon.');
-      
-      this.contactForm = {
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        interest: '',
-        message: ''
-      };
-    }
   }
 
   ngOnInit(): void {
