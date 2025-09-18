@@ -6,10 +6,11 @@ import { HomeDataService } from '../../services/home-data.service';
 import { HeroComponent } from "../../components/hero-component/hero-component";
 import { AboutComponent } from "../../components/about-component/about-component";
 import { ServicesComponent } from "../../components/services-component/services-component";
+import { ContactComponent } from "../../components/contact-component/contact-component";
 
 @Component({
   selector: 'app-home',
-  imports: [FormsModule, CommonModule, HeroComponent, AboutComponent, ServicesComponent],
+  imports: [FormsModule, CommonModule, HeroComponent, AboutComponent, ServicesComponent, ContactComponent],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })

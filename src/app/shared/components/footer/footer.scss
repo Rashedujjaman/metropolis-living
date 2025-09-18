@@ -30,7 +30,7 @@
   padding: var(--spacing-xxl) 0 var(--spacing-lg); /* Generous top padding, moderate bottom */
   position: relative; /* Creates positioning context for pseudo-elements */
   border-bottom: 5px solid var(--primary-orange); /* Orange brand accent border */
-  
+  margin: 0;
   /**
    * Decorative top gradient line
    * Creates subtle visual separation from main content

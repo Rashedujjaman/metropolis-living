@@ -87,6 +87,8 @@
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, auto);
         position: relative;
+        background: var(--white);
+        gap: 0;
 
         &::after {
             content: ">>";
@@ -105,10 +107,11 @@
             letter-spacing: -6px;
             font-size: 1.5rem;
         }
+
     }
 
     .grid-item {
-        background: #f5f5f5;
+        background: var(--white);
         padding: 30px;
         height: 500px;
         display: flex;
@@ -937,119 +940,6 @@
         }
     }
 
-    // Dark mode support
-    @media (prefers-color-scheme: dark) {
-        .grid-item {
-            background-color: var(--dark-bg, #2a2a2a);
-            color: var(--text-light, #ffffff);
-
-            .title {
-                color: var(--primary-light, #ffffff);
-            }
-
-            p {
-                color: var(--secondary-light, #cccccc);
-            }
-        }
-
-        .hero-bubble-bottom {
-            background: var(--dark-bg, #2a2a2a) !important;
-        }
-
-        .testimonials {
-            .section-title {
-                color: var(--primary-light, #ffffff);
-                
-                .char-image {
-                    border-color: var(--color-accent-dark, #ff6b35);
-                }
-            }
-            
-            .testimonial-card {
-                // border-color: var(--border-dark, #444);
-                
-                .card-icon {
-                    background: var(--primary-orange);
-                }
-                
-                .card-content {
-                    .description {
-                        color: var(--secondary-light, #cccccc);
-                        
-                        &::before {
-                            background: var(--primary-orange);
-                        }
-                    }
-                    
-                    .author {
-                        color: var(--text-light, #ffffff);
-                    }
-                    
-                    .role {
-                        color: var(--primary-orange);
-                    }
-                }
-            }
-        }
-    }
-
-    // Print styles
-    @media print {
-        .services-section {
-            background: white !important;
-            color: black !important;
-        }
-
-        .hero-bubbles,
-        .urban-grid::after {
-            display: none;
-        }
-
-        .grid-item {
-            background: white !important;
-            border: 1px solid #ccc;
-            page-break-inside: avoid;
-        }
-
-        .testimonials {
-            .section-title {
-                color: black !important;
-                
-                .char-image {
-                    display: none;
-                }
-            }
-            
-            .testimonial-card {
-                border: 1px solid #ccc;
-                page-break-inside: avoid;
-                box-shadow: none;
-                
-                .video-player-container {
-                    display: none;
-                }
-                
-                .card-icon {
-                    display: none;
-                }
-                
-                .card-content {
-                    .description {
-                        color: black !important;
-                        
-                        &::before {
-                            display: none;
-                        }
-                    }
-                    
-                    .author,
-                    .role {
-                        color: black !important;
-                    }
-                }
-            }
-        }
-    }
 };
 
 .line-separator2 {
