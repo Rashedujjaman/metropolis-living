@@ -449,43 +449,26 @@
             object-fit: contain;
           }
         }
-        
 
-
-        .hero-overlay {
+        /**
+        * Call-to-Action Overlay Container
+        * - Positioned absolutely within right-content
+        * - Strategic placement for maximum visibility
+        * - Responsive positioning adjustments
+        */
+        .cta-overlay-container {
           position: absolute;
           top: 30px;
           left: -50px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: row;
-          height: 50px;
-          width: 200px;
-
-          .section-left{
-            // padding: 20px;
-            background: var(--primary-orange);
-            width: 25%;
-            height: 100%;
-            color: #f8f9fa;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            letter-spacing: -5px;
-          }
-          .section-right{
-            // padding: 20px;
-            background: var(--black);
-            height: 100%;
-            color: #f8f9fa;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            width: 75%;
+          z-index: 10;
+          
+          /* Ensure proper layering above image */
+          call-action-component {
+            display: block;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
           }
         }
+        
 
         // Square Decor
         .square-decor {
@@ -740,6 +723,11 @@
         width: calc(65% - 100px);
         right: 100px;
         max-height: 600px;
+
+        .cta-overlay-container {
+          top: 40px;
+          left: -60px;
+        }
       }
     }
 

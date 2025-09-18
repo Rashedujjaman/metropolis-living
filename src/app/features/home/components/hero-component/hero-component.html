@@ -156,22 +156,15 @@
                alt="Vertical view of modern glass skyscrapers representing urban development excellence" 
                class="hero-img">
         </div>
-
-        <!-- Call-to-Action Overlay -->
-        <div class="hero-overlay" 
-             role="button"
-             tabindex="0"
-             aria-label="Get started with our services"
-             (click)="onGetStartedClick()"
-             (keydown.enter)="onGetStartedClick()"
-             (keydown.space)="onGetStartedClick()">
-          
-          <div class="section-left" aria-hidden="true">
-            <span>>></span>
-          </div>
-          <div class="section-right">
-            <span>Get Started</span>
-          </div>
+        
+        <!-- Call-to-Action Overlay Container -->
+        <div class="cta-overlay-container">
+          <call-action-component 
+            actionName="Get Started"
+            [height]="50"
+            [width]="200"
+            (actionClicked)="onGetStartedClick($event)">
+          </call-action-component>
         </div>
 
         <!-- Decorative Square Grid Pattern -->

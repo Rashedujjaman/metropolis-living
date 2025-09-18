@@ -3,11 +3,12 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Testimonial, Statistic, Project, Service, BlogPost, FAQ, ContactForm } from '../../models/home.model';
 import { HomeDataService } from '../../services/home-data.service';
-import { HeroComponent } from "../../components/hero-component";
+import { HeroComponent } from "../../components/hero-component/hero-component";
+import { AboutComponent } from "../../components/about-component/about-component";
 
 @Component({
   selector: 'app-home',
-  imports: [FormsModule, CommonModule, HeroComponent],
+  imports: [FormsModule, CommonModule, HeroComponent, AboutComponent],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })

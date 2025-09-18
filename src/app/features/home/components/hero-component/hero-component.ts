@@ -39,6 +39,7 @@
 
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { CallActionComponent } from "../call-action-component/call-action-component";
 
 /**
  * Interface defining the structure of hero rating data
@@ -73,7 +74,8 @@ export interface HeroRatingData {
 @Component({
   selector: 'hero-component',
   templateUrl: './hero-component.html',
-  styleUrls: ['./hero-component.scss']
+  styleUrls: ['./hero-component.scss'],
+  imports: [CallActionComponent]
 })
 export class HeroComponent implements OnInit, OnDestroy {
   
@@ -143,6 +145,26 @@ export class HeroComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     // Cleanup any subscriptions or event listeners
     this.cleanupComponent();
+  }
+
+ /**
+ * Handles call-to-action button clicks from the overlay component
+ * @param actionName - The name of the action that was clicked
+ */
+  onGetStartedClick(actionName: string): void {
+    console.log(`Hero CTA clicked: ${actionName}`);
+    
+    // Handle the action - could navigate to contact form, etc.
+    // Example: this.router.navigate(['/contact']);
+    
+    // Analytics tracking
+    // Example: this.analytics.track('hero_cta_clicked', { action: actionName });
+    
+    // Scroll to contact section or perform other actions
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 
   // ============================================================================
@@ -231,48 +253,6 @@ export class HeroComponent implements OnInit, OnDestroy {
     }
   }
 
-  /**
-   * Handles "Get Started" call-to-action interactions
-   * Manages primary conversion flow and user onboarding navigation
-   * 
-   * This method is the main conversion point for the hero section,
-   * directing users to the appropriate onboarding or contact flow.
-   * 
-   * @public
-   * @returns {void}
-   * @since 1.0.0
-   * 
-   * @example
-   * ```html
-   * <div class="hero-overlay" 
-   *      (click)="onGetStartedClick()"
-   *      (keydown.enter)="onGetStartedClick()">
-   *   Get Started
-   * </div>
-   * ```
-   */
-  public onGetStartedClick(): void {
-    try {
-      console.log('Get Started CTA clicked - Initiating user flow');
-      
-      // Track conversion event for analytics
-      this.trackConversionEvent();
-      
-      // Navigate to appropriate onboarding flow
-      // Options: Contact form, Services page, Project showcase
-      this.router.navigate(['/contact']);
-      
-      // Alternative implementations:
-      // this.router.navigate(['/services']);
-      // this.router.navigate(['/projects']);
-      // this.openContactModal();
-      
-    } catch (error) {
-      console.error('Error handling Get Started click:', error);
-      // Fallback navigation or error handling
-      this.handleNavigationError();
-    }
-  }
 
   // ============================================================================
   // PRIVATE UTILITY METHODS
