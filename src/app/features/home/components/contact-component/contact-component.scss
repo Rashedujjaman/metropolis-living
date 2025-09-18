@@ -72,18 +72,19 @@
         gap: var(--spacing-xxl);
         position: relative;
 
-        .card{
-            flex: 1;
+        .card {
+            width: 100%;
             background: var(--white);
-            border-radius: var(--border-radius-md);
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
             padding: 0;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             overflow: hidden;
             position: relative;
+            border-radius: 0;
+            border: none;
             
             /* Clip-path cutout on left top */
-            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 15%);
+            clip-path: polygon(80px 0, 100% 0, 100% 100%, 0 100%, 0 80px);
 
             &:hover {
                 transform: translateY(-5px);
@@ -116,7 +117,6 @@
                     letter-spacing: 0.5px;
                     z-index: 2;
                     border-bottom: 3px solid var(--primary-orange);
-
                 }
             }
 
@@ -134,25 +134,29 @@
                     font-weight: 500;
                     letter-spacing: 1px;
                 }
-
             }        
+        }
+
+        .card-container {
+            flex: 1;
+
             &::after {
                 content: "";
                 position: absolute;
-                top: -60px;
-                right: -60px;
-                width: 10px;
-                height: 10px;
-                background: rgb(116, 19, 19);
+                top: 200px;
+                right: 30px;
+                width: 6px;
+                height: 6px;
+                background: rgb(255, 255, 255);
                 box-shadow: 
                     60px 0 0 0 white,
                     0 -60px 0 0 white,
-                    60px -60px 0 0 white;
-                z-index: -1;
+                    60px -60px 0 0 white,
+                    60px -120px 0 0 white,
+                    0px -120px 0 0 white;
+                z-index: 1000;
             }
         }
-
-
     }
 
     .help-corner{
@@ -333,198 +337,209 @@
     }
 }
 
-    // Mobile devices (below 768px)
-    @media (max-width: 767px) {
-        .header {
-            gap: var(--spacing-md);
-            text-align: center;
+// Mobile devices (below 768px)
+@media (max-width: 767px) {
+    .header {
+        gap: var(--spacing-md);
+        text-align: center;
 
-            .col-1 {
-                .hero-bubbles {
-                    justify-content: center;
-                    margin: 0 auto;
-                }
-            }
-
-            .col-2 {
-                .section-subtitle {
-                    font-size: 1.25rem;
-                    text-align: center;
-                }
+        .col-1 {
+            .hero-bubbles {
+                justify-content: center;
+                margin: 0 auto;
             }
         }
 
-        .card-wrapper {
-            flex-direction: column;
-            gap: var(--spacing-md);
+        .col-2 {
+            .section-subtitle {
+                font-size: .5rem;
+                text-align: center;
+            }
+        }
+    }
 
-            .card {
-                .card-image {
-                    height: 180px;
+    .card-wrapper {
+        flex-direction: column;
+        gap: var(--spacing-md);
+
+        .card {
+            .card-image {
+                height: 180px;
+            }
+
+            .card-content {
+                padding: var(--spacing-md);
+
+                .card-title {
+                    font-size: .75rem;
                 }
 
-                .card-content {
+                .card-date {
+                    font-size: 0.5rem;
+                }
+            }
+        }
+    }
+
+    .help-corner {
+
+        .heading{
+            .section-title {
+                font-size: 2rem;
+
+                .char-image {
+                    width: 2rem;
+                    height: 2rem;
+                }
+            }
+
+            .section-subtitle {
+                font-size: .75rem;
+            }
+        }
+        .faqs {
+            margin-top: var(--spacing-lg);
+            padding: 0 var(--spacing-sm);
+
+            .faq-item {
+                .faq-question {
                     padding: var(--spacing-md);
 
-                    .card-title {
-                        font-size: 1.3rem;
+                    .question-text {
+                        font-size: 1rem;
                     }
 
-                    .card-date {
-                        font-size: 0.8rem;
+                    .toggle-icon {
+                        width: 28px;
+                        height: 28px;
+
+                        .icon {
+                            font-size: 1.1rem;
+                        }
+                    }
+                }
+
+                .faq-answer {
+                    &.open {
+                        padding: var(--spacing-md);
                     }
 
-                    .card-text {
+                    p {
                         font-size: 0.9rem;
                     }
                 }
             }
         }
+    }
+}
 
-        .help-corner {
-            .faqs {
-                margin-top: var(--spacing-lg);
-                padding: 0 var(--spacing-sm);
+// Tablet devices (768px - 1024px)
+@media (min-width: 768px) and (max-width: 1024px) {
+    .header {
+        .col-2 {
+            .section-subtitle {
+                font-size: 1.8rem;
+            }
+        }
+    }
 
-                .faq-item {
-                    .faq-question {
-                        padding: var(--spacing-md);
+    .card-wrapper {
+        .card {
+            .card-image {
+                height: 160px;
 
-                        .question-text {
-                            font-size: 1rem;
-                        }
+                .feature-tag {
+                    font-size: 0.75rem;
+                }
+            }
 
-                        .toggle-icon {
-                            width: 28px;
-                            height: 28px;
-
-                            .icon {
-                                font-size: 1.1rem;
-                            }
-                        }
-                    }
-
-                    .faq-answer {
-                        &.open {
-                            padding: var(--spacing-md);
-                        }
-
-                        p {
-                            font-size: 0.9rem;
-                        }
-                    }
+            .card-content {
+                .card-title {
+                    font-size: 1.4rem;
                 }
             }
         }
     }
 
-    // Tablet devices (768px - 1024px)
-    @media (min-width: 768px) and (max-width: 1024px) {
-        .header {
-            .col-2 {
-                .section-subtitle {
-                    font-size: 1.8rem;
-                }
-            }
-        }
-
-        .card-wrapper {
-            .card {
-                .card-image {
-                    height: 160px;
-
-                    .feature-tag {
-                        font-size: 0.75rem;
+    .help-corner {
+        .faqs {
+            .faq-item {
+                .faq-question {
+                    .question-text {
+                        font-size: 1.05rem;
                     }
                 }
 
-                .card-content {
-                    .card-title {
-                        font-size: 1.4rem;
-                    }
-                }
-            }
-        }
-
-        .help-corner {
-            .faqs {
-                .faq-item {
-                    .faq-question {
-                        .question-text {
-                            font-size: 1.05rem;
-                        }
-                    }
-
-                    .faq-answer {
-                        p {
-                            font-size: 0.95rem;
-                        }
+                .faq-answer {
+                    p {
+                        font-size: 0.95rem;
                     }
                 }
             }
         }
     }
+}
 
-    // Desktop devices (above 1024px)
-    @media (min-width: 1025px) {
-        .header {
-            .col-2 {
-                .section-subtitle {
-                    font-size: 2.2rem;
+// Desktop devices (above 1024px)
+@media (min-width: 1025px) {
+    .header {
+        .col-2 {
+            .section-subtitle {
+                font-size: 2.2rem;
+            }
+        }
+    }
+
+    .card-wrapper {
+        .card {
+            .card-image {
+                height: 220px;
+            }
+
+            .card-content {
+                padding: var(--spacing-xl);
+
+                .card-title {
+                    font-size: 1.6rem;
+                }
+
+                .card-text {
+                    font-size: 1.1rem;
                 }
             }
         }
+    }
 
-        .card-wrapper {
-            .card {
-                .card-image {
-                    height: 220px;
-                }
-
-                .card-content {
+    .help-corner {
+        .faqs {
+            .faq-item {
+                .faq-question {
                     padding: var(--spacing-xl);
 
-                    .card-title {
-                        font-size: 1.6rem;
+                    .question-text {
+                        font-size: 1.2rem;
                     }
 
-                    .card-text {
+                    .toggle-icon {
+                        width: 32px;
+                        height: 32px;
+
+                        .icon {
+                            font-size: 1.3rem;
+                        }
+                    }
+                }
+
+                .faq-answer {
+                    &.open {
+                        padding: var(--spacing-xl);
+                    }
+
+                    p {
                         font-size: 1.1rem;
                     }
                 }
             }
         }
-
-        .help-corner {
-            .faqs {
-                .faq-item {
-                    .faq-question {
-                        padding: var(--spacing-xl);
-
-                        .question-text {
-                            font-size: 1.2rem;
-                        }
-
-                        .toggle-icon {
-                            width: 32px;
-                            height: 32px;
-
-                            .icon {
-                                font-size: 1.3rem;
-                            }
-                        }
-                    }
-
-                    .faq-answer {
-                        &.open {
-                            padding: var(--spacing-xl);
-                        }
-
-                        p {
-                            font-size: 1.1rem;
-                        }
-                    }
-                }
-            }
-        }
     }
+}
