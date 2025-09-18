@@ -192,6 +192,7 @@
             margin-right: auto;
             position: relative;
             z-index: 1;
+            margin-bottom: 4rem;
 
             .faq-item {
                 margin-bottom: var(--spacing-md);
@@ -294,6 +295,21 @@
                 height: 50px;
                 background: linear-gradient(135deg, var(--light-bg), var(--color-accent));
                 transform: translate(50%, -50%);
+                z-index: -1;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -60px;
+                left: -120px;
+                width: 10px;
+                height: 10px;
+                background: white;
+                box-shadow: 
+                    60px 0 0 0 white,
+                    0 -60px 0 0 white,
+                    60px -60px 0 0 white;
                 z-index: -1;
             }
         }
