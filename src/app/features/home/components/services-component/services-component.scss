@@ -1,4 +1,7 @@
 .services-section {
+    padding: 0 var(--spacing-sm);
+    max-width: 100%;
+    margin: 0 auto;
 
     .header{
         display: flex;
@@ -249,6 +252,348 @@
     .bottom-right{
         background: url('/grid_bottom_right.png');
         background-size: cover;
+    }
+
+    // Responsive Design - Mobile First Approach
+    
+    // Mobile devices (320px - 767px)
+    @media (max-width: 767px) {
+        padding: 0 var(--spacing-xs);
+
+        .header {
+            flex-direction: column;
+            gap: var(--spacing-md);
+            text-align: center;
+
+            .col-1, .col-2, .col-3 {
+                flex: none;
+                width: 100%;
+            }
+
+            .col-1 {
+                .hero-bubbles {
+                    justify-content: center;
+                    width: 120px;
+                    margin: 0 auto;
+
+                    .hero-bubble {
+                        width: 50px;
+                        height: 50px;
+
+                        &.hero-bubble-bottom {
+                            left: 25px;
+                        }
+                    }
+                }
+            }
+
+            .col-2, .col-3 {
+                .section-subtitle {
+                    font-size: clamp(1.2rem, 4vw, 1.8rem);
+                    text-align: center;
+                }
+            }
+        }
+
+        .urban-grid {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(4, auto);
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+
+            &::after {
+                position: static;
+                transform: none;
+                margin: var(--spacing-sm) auto 0;
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+
+        .grid-item {
+            height: auto;
+            min-height: 300px;
+            padding: var(--spacing-md);
+
+            .title {
+                font-size: clamp(1.8rem, 6vw, 2.5rem);
+                margin-bottom: var(--spacing-sm);
+            }
+
+            p {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+        }
+
+        .middle-right {
+            grid-template-rows: auto auto auto;
+            grid-template-columns: 1fr;
+            height: auto;
+
+            .top-left, .top-right {
+                grid-row: auto;
+                grid-column: 1 / 2;
+                min-height: 200px;
+                padding: var(--spacing-md);
+            }
+
+            .top-left {
+                order: 1;
+                .title {
+                    font-size: 1.5rem;
+                    margin-bottom: var(--spacing-xs);
+                }
+            }
+
+            .top-right {
+                order: 2;
+                img {
+                    width: 30%;
+                    max-width: 80px;
+                }
+            }
+
+            .bottom {
+                order: 3;
+                grid-row: auto;
+                grid-column: 1 / 2;
+                padding: var(--spacing-md);
+                
+                .content-with-icon {
+                    flex-direction: column;
+                    text-align: center;
+                    gap: var(--spacing-xs);
+
+                    .icon {
+                        margin-right: 0;
+                        margin-bottom: var(--spacing-xs);
+                    }
+
+                    p {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+
+        .logo-u {
+            width: 30px;
+            height: 30px;
+        }
+
+        .content-with-icon {
+            flex-direction: column;
+            text-align: center;
+
+            .icon {
+                margin-right: 0;
+                margin-bottom: var(--spacing-xs);
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    // Tablet devices (768px - 1023px)
+    @media (min-width: 768px) and (max-width: 1023px) {
+        padding: 0 var(--spacing-sm);
+
+        .header {
+            .col-2, .col-3 {
+                .section-subtitle {
+                    font-size: 1.8rem;
+                }
+            }
+        }
+
+        .urban-grid {
+            gap: var(--spacing-sm);
+
+            &::after {
+                width: 45px;
+                height: 45px;
+                font-size: 1.8rem;
+            }
+        }
+
+        .grid-item {
+            height: 400px;
+            padding: 25px;
+
+            .title {
+                font-size: 2.5rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+        }
+
+        .middle-right {
+            .top-left, .top-right {
+                padding: 30px;
+            }
+
+            .top-right {
+                img {
+                    width: 45%;
+                }
+            }
+
+            .bottom {
+                padding: 0 30px;
+
+                .content-with-icon {
+                    .icon {
+                        margin-right: 15px;
+                    }
+
+                    p {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+    }
+
+    // Large tablets and small desktops (1024px - 1199px)
+    @media (min-width: 1024px) and (max-width: 1199px) {
+        padding: 0 var(--spacing-md);
+        max-width: 1024px;
+
+        .header {
+            .col-2, .col-3 {
+                .section-subtitle {
+                    font-size: 1.9rem;
+                }
+            }
+        }
+
+        .grid-item {
+            height: 450px;
+
+            .title {
+                font-size: 2.8rem;
+            }
+        }
+    }
+
+    // Large desktops (1200px+)
+    @media (min-width: 1200px) {
+        padding: 0 var(--spacing-lg);
+        max-width: 1200px;
+
+        .header {
+            .col-2, .col-3 {
+                .section-subtitle {
+                    font-size: 2.2rem;
+                }
+            }
+        }
+
+        .urban-grid {
+            gap: var(--spacing-md);
+        }
+
+        .grid-item {
+            height: 500px;
+            padding: 35px;
+
+            .title {
+                font-size: 3.2rem;
+            }
+        }
+    }
+
+    // Ultra-wide screens (1400px+)
+    @media (min-width: 1400px) {
+        max-width: 1400px;
+        
+        .urban-grid {
+            gap: var(--spacing-lg);
+        }
+    }
+
+    // Height-based queries for landscape orientation
+    @media (max-height: 600px) and (orientation: landscape) {
+        .grid-item {
+            height: auto;
+            min-height: 250px;
+            padding: var(--spacing-sm);
+
+            .title {
+                font-size: 2rem;
+                margin-bottom: var(--spacing-xs);
+            }
+        }
+
+        .middle-right {
+            .top-left, .top-right {
+                padding: var(--spacing-sm);
+            }
+        }
+    }
+
+    // Accessibility and performance optimizations
+    @media (prefers-reduced-motion: reduce) {
+        .hero-bubble {
+            transition: none;
+        }
+
+        .urban-grid::after {
+            animation: none;
+        }
+    }
+
+    // High DPI displays
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        .logo-u,
+        .top-right,
+        .middle-left,
+        .bottom-right {
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+        }
+    }
+
+    // Dark mode support
+    @media (prefers-color-scheme: dark) {
+        .grid-item {
+            background-color: var(--dark-bg, #2a2a2a);
+            color: var(--text-light, #ffffff);
+
+            .title {
+                color: var(--primary-light, #ffffff);
+            }
+
+            p {
+                color: var(--secondary-light, #cccccc);
+            }
+        }
+
+        .hero-bubble-bottom {
+            background: var(--dark-bg, #2a2a2a) !important;
+        }
+    }
+
+    // Print styles
+    @media print {
+        .services-section {
+            background: white !important;
+            color: black !important;
+        }
+
+        .hero-bubbles,
+        .urban-grid::after {
+            display: none;
+        }
+
+        .grid-item {
+            background: white !important;
+            border: 1px solid #ccc;
+            page-break-inside: avoid;
+        }
     }
 
 
