@@ -187,9 +187,11 @@
 
         .faqs {
             margin-top: var(--spacing-xl);
-            max-width: 800px;
+            max-width: 70%;
             margin-left: auto;
             margin-right: auto;
+            position: relative;
+            z-index: 1;
 
             .faq-item {
                 margin-bottom: var(--spacing-md);
@@ -282,10 +284,21 @@
                         }
                     }
                 }
-                }
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 50px;
+                height: 50px;
+                background: linear-gradient(135deg, var(--light-bg), var(--color-accent));
+                transform: translate(50%, -50%);
+                z-index: -1;
             }
         }
     }
+}
 
     // Mobile devices (below 768px)
     @media (max-width: 767px) {
