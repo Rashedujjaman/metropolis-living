@@ -24,6 +24,25 @@
  * - Orange bottom border for brand accent
  * - Gradient top line for subtle visual interest
  */
+.footer-container{
+  position: relative; /* Establishes positioning context for child elements */
+  
+  &::after {
+    overflow: hidden;
+    content: '';
+    position: absolute;
+    transform: translate(50%, -50%);
+    top: 0;
+    right: 0;
+    height: 60px;
+    width: 60px;
+    opacity: 0.8;
+    background: linear-gradient(180deg, var(--white), var(--primary-orange));
+  }
+}
+
+
+
 .footer {
   background: #0A0A28 !important; /* Dark navy background - overrides Bootstrap */
   clip-path: polygon(50px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 50px); /* 50px triangular cutout */
@@ -433,5 +452,37 @@
    */
   .footer-top {
     margin-bottom: var(--spacing-lg); /* Reduced mobile spacing */
+  }
+
+  /**
+   * Mobile newsletter form optimization
+   * Reduces size and adjusts spacing for mobile screens
+   */
+  .newsletter-text {
+    font-size: 1.3rem; /* Smaller call-to-action text for mobile */
+    margin-bottom: var(--spacing-sm); /* Reduced spacing */
+    line-height: 1.3; /* Tighter line height for mobile */
+  }
+
+  .newsletter-form {
+    margin-bottom: var(--spacing-md); /* Reduced form margin */
+  }
+
+  .newsletter-input-group {
+    max-width: 300px; /* Constrain width on mobile */
+    margin: 0 auto; /* Center the form */
+  }
+
+  .newsletter-input {
+    font-size: 0.85rem; /* Smaller input text */
+    padding: var(--spacing-xs) 0; /* Reduced padding */
+  }
+
+  .newsletter-btn {
+    padding: var(--spacing-xs) var(--spacing-sm); /* Smaller button padding */
+    
+    b {
+      font-size: 0.8rem; /* Smaller button text */
+    }
   }
 }
