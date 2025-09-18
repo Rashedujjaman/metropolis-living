@@ -204,28 +204,18 @@ export class HomeDataService {
     const faqs: FAQ[] = [
       {
         id: 1,
-        question: 'What types of properties does Metropolis Living develop?',
-        answer: 'We specialize in luxury residential developments, including high-rise condominiums, townhomes, and mixed-use communities. Our portfolio spans from affordable housing to ultra-luxury properties, all designed with modern amenities and sustainable features.'
+        question: 'What types of properties do you develop?',
+        answer: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et dis consectetuer.'
       },
       {
         id: 2,
-        question: 'What is the typical timeline for a development project?',
+        question: 'What is the timeline for project completion?',
         answer: 'Project timelines vary depending on size and complexity, but most residential developments take 18-36 months from groundbreaking to completion. We provide regular updates throughout the construction process and maintain transparent communication with all stakeholders.'
       },
       {
         id: 3,
-        question: 'Do you offer financing options for buyers?',
-        answer: 'Yes, we work with preferred lending partners to offer competitive financing solutions. Our team can connect you with mortgage specialists who understand our developments and can help structure the best financing package for your situation.'
-      },
-      {
-        id: 4,
-        question: 'What warranties do you provide on new constructions?',
-        answer: 'All our new constructions come with comprehensive warranties covering structural elements, mechanical systems, and finish materials. We also provide ongoing support through our customer service team to address any post-purchase needs.'
-      },
-      {
-        id: 5,
-        question: 'Are your developments environmentally sustainable?',
-        answer: 'Absolutely. Sustainability is core to our development philosophy. We incorporate energy-efficient systems, sustainable materials, LEED certification standards, and innovative green technologies in all our projects to minimize environmental impact.'
+        question: 'Are there any warranties or guarantees?',
+        answer: 'Yes, we offer a range of warranties and guarantees to ensure the quality and durability of our developments. These include structural warranties, appliance guarantees, and a comprehensive customer service program to address any post-purchase concerns.'
       }
     ];
     return of(faqs);

@@ -45,5 +45,24 @@
                 </div>
             </div>
         </div>
+        <div class="help-corner">
+            <div class="heading">
+                <h1 class="section-title">*Help C<div class="char-image"></div>rner</h1>
+                <p class="section-subtitle">Voluptatem accusantium doloremque Iaudan</p>
+            </div>
+            <div class="faqs">
+                <div class="faq-item" *ngFor="let faq of faqs; let i = index" [class.active]="faq.isOpen">
+                    <div class="faq-question" (click)="toggleFaq(i)">
+                        <span class="question-text">{{ faq.question }}</span>
+                        <span class="toggle-icon" [class.open]="faq.isOpen">
+                            <i class="icon">+</i>
+                        </span>
+                    </div>
+                    <div class="faq-answer" [class.open]="faq.isOpen">
+                        <p>{{ faq.answer }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
