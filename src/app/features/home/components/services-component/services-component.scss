@@ -87,6 +87,7 @@
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, auto);
         position: relative;
+        background: var(--white);
 
         &::after {
             content: ">>";
@@ -108,7 +109,6 @@
     }
 
     .grid-item {
-        background: #f5f5f5;
         padding: 30px;
         height: 500px;
         display: flex;
@@ -249,8 +249,8 @@
 
     //Testimonials Section
     .testimonials {
-        padding: var(--spacing-lg) 0;
-        margin-bottom: var(--spacing-lg);
+        padding: var(--spacing-xxl) 0;
+        margin-bottom: var(--spacing-xxl);
         display: flex;
         justify-content: center;
         position: relative;
@@ -698,211 +698,6 @@
         }
     }
 
-    // Large tablets and small desktops (1024px - 1199px)
-    @media (min-width: 1024px) and (max-width: 1199px) {
-        padding: 0 var(--spacing-md);
-        max-width: 1024px;
-
-        .header {
-            .col-2, .col-3 {
-                .section-subtitle {
-                    font-size: 1.9rem;
-                }
-            }
-        }
-
-        .grid-item {
-            height: 450px;
-
-            .title {
-                font-size: 2.8rem;
-            }
-        }
-
-        .testimonials {
-            .section-title {
-                font-size: 3.2rem;
-
-                .char-image {
-                    width: 3rem;
-                    height: 3rem;
-                }
-            }
-
-            .testimonial-card {
-                width: 80%;
-
-                .card-content {
-                    .description {
-                        font-size: 1rem;
-                        
-                        &::before {
-                            width: 55px;
-                            height: 3px;
-                        }
-                    }
-
-                    .author {
-                        font-size: 1.1rem;
-                    }
-
-                    .role {
-                        font-size: 1rem;
-                    }
-                }
-            }
-        }
-    }
-
-    // Large desktops (1200px+)
-    @media (min-width: 1200px) {
-        padding: 0 var(--spacing-lg);
-        max-width: 1200px;
-
-        .header {
-            .col-2, .col-3 {
-                .section-subtitle {
-                    font-size: 2.2rem;
-                }
-            }
-        }
-
-        .urban-grid {
-            gap: var(--spacing-md);
-        }
-
-        .grid-item {
-            height: 500px;
-            padding: 35px;
-
-            .title {
-                font-size: 3.2rem;
-            }
-        }
-
-        .testimonials {
-            .section-title {
-                font-size: 3.5rem;
-                margin-bottom: var(--spacing-lg);
-
-                .char-image {
-                    width: 3.2rem;
-                    height: 3.2rem;
-                }
-            }
-
-            .testimonial-card {
-                width: 75%;
-                padding: var(--spacing-lg);
-
-                .video-player-container {
-                    margin-bottom: var(--spacing-lg);
-                }
-
-                .card-icon {
-                    height: 32px;
-                    width: 32px;
-                    font-size: 1rem;
-                    margin-right: var(--spacing-md);
-                }
-
-                .card-content {
-                    .description {
-                        font-size: 1.1rem;
-                        line-height: 1.7;
-                        
-                        &::before {
-                            width: 60px;
-                            height: 3px;
-                        }
-                    }
-
-                    .author {
-                        font-size: 1.2rem;
-                    }
-
-                    .role {
-                        font-size: 1.1rem;
-                        margin-top: var(--spacing-sm);
-                    }
-                }
-            }
-        }
-    }
-
-    // Ultra-wide screens (1400px+)
-    @media (min-width: 1400px) {
-        max-width: 1400px;
-        
-        .urban-grid {
-            gap: var(--spacing-lg);
-        }
-
-        .testimonials {
-            .section-title {
-                font-size: 4rem;
-                
-                .char-image {
-                    width: 3.5rem;
-                    height: 3.5rem;
-                }
-            }
-
-            .testimonial-card {
-                width: 70%;
-                max-width: 900px;
-            }
-        }
-    }
-
-    // Height-based queries for landscape orientation
-    @media (max-height: 600px) and (orientation: landscape) {
-        .grid-item {
-            height: auto;
-            min-height: 250px;
-            padding: var(--spacing-sm);
-
-            .title {
-                font-size: 2rem;
-                margin-bottom: var(--spacing-xs);
-            }
-        }
-
-        .middle-right {
-            .top-left, .top-right {
-                padding: var(--spacing-sm);
-            }
-        }
-
-        .testimonials {
-            padding: var(--spacing-sm) 0;
-            margin-bottom: var(--spacing-sm);
-
-            .section-title {
-                font-size: 2.5rem;
-                margin-bottom: var(--spacing-sm);
-                
-                .char-image {
-                    width: 2rem;
-                    height: 2rem;
-                }
-            }
-
-            .testimonial-card {
-                width: 90%;
-                padding: var(--spacing-sm);
-                
-                .card-content {
-                    .description {
-                        font-size: 0.9rem;
-                        line-height: 1.4;
-                        margin-bottom: var(--spacing-sm);
-                    }
-                }
-            }
-        }
-    }
-
     // Accessibility and performance optimizations
     @media (prefers-reduced-motion: reduce) {
         .hero-bubble {
@@ -936,121 +731,7 @@
             image-rendering: crisp-edges;
         }
     }
-
-    // Dark mode support
-    @media (prefers-color-scheme: dark) {
-        .grid-item {
-            background-color: var(--dark-bg, #2a2a2a);
-            color: var(--text-light, #ffffff);
-
-            .title {
-                color: var(--primary-light, #ffffff);
-            }
-
-            p {
-                color: var(--secondary-light, #cccccc);
-            }
-        }
-
-        .hero-bubble-bottom {
-            background: var(--dark-bg, #2a2a2a) !important;
-        }
-
-        .testimonials {
-            .section-title {
-                color: var(--primary-light, #ffffff);
-                
-                .char-image {
-                    border-color: var(--color-accent-dark, #ff6b35);
-                }
-            }
-            
-            .testimonial-card {
-                // border-color: var(--border-dark, #444);
-                
-                .card-icon {
-                    background: var(--primary-orange);
-                }
-                
-                .card-content {
-                    .description {
-                        color: var(--secondary-light, #cccccc);
-                        
-                        &::before {
-                            background: var(--primary-orange);
-                        }
-                    }
-                    
-                    .author {
-                        color: var(--text-light, #ffffff);
-                    }
-                    
-                    .role {
-                        color: var(--primary-orange);
-                    }
-                }
-            }
-        }
-    }
-
-    // Print styles
-    @media print {
-        .services-section {
-            background: white !important;
-            color: black !important;
-        }
-
-        .hero-bubbles,
-        .urban-grid::after {
-            display: none;
-        }
-
-        .grid-item {
-            background: white !important;
-            border: 1px solid #ccc;
-            page-break-inside: avoid;
-        }
-
-        .testimonials {
-            .section-title {
-                color: black !important;
-                
-                .char-image {
-                    display: none;
-                }
-            }
-            
-            .testimonial-card {
-                border: 1px solid #ccc;
-                page-break-inside: avoid;
-                box-shadow: none;
-                
-                .video-player-container {
-                    display: none;
-                }
-                
-                .card-icon {
-                    display: none;
-                }
-                
-                .card-content {
-                    .description {
-                        color: black !important;
-                        
-                        &::before {
-                            display: none;
-                        }
-                    }
-                    
-                    .author,
-                    .role {
-                        color: black !important;
-                    }
-                }
-            }
-        }
-    }
-};
+}
 
 .line-separator2 {
     width: 100%;
