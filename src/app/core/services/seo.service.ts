@@ -8,7 +8,7 @@ export interface SeoData {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SeoService {
   updateSeoData(data: SeoData): void {
@@ -32,7 +32,7 @@ export class SeoService {
     }
 
     let element = document.querySelector(selector);
-    
+
     if (element) {
       element.setAttribute('content', content);
     } else {

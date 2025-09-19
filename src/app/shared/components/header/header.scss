@@ -131,7 +131,7 @@
  */
 .navbar-nav {
   margin-left: auto; /* Pushes navigation to the right side */
-  
+
   /**
    * Navigation links container
    * - Horizontal flex layout for menu items
@@ -254,7 +254,7 @@
     span:nth-child(1) {
       transform: rotate(45deg) translate(6px, 6px);
     }
-    
+
     /**
      * Middle line transformation
      * Completely fades out for clean X appearance
@@ -262,7 +262,7 @@
     span:nth-child(2) {
       opacity: 0;
     }
-    
+
     /**
      * Bottom line transformation
      * Rotates -45° and translates to form bottom part of X
@@ -389,7 +389,7 @@
   .navbar-nav {
     display: none;
   }
-  
+
   /**
    * Hide additional navbar actions if present
    * Maintains clean mobile layout
@@ -397,7 +397,7 @@
   .navbar-actions {
     display: none;
   }
-  
+
   /**
    * Explicit space-between alignment for mobile
    * Ensures logo stays left, toggle button stays right
@@ -421,7 +421,7 @@
   .mobile-menu-toggle {
     display: none !important;
   }
-  
+
   /**
    * Hide mobile menu overlay on desktop
    * Prevents unnecessary DOM elements
@@ -429,7 +429,7 @@
   .mobile-menu {
     display: none;
   }
-  
+
   /**
    * Explicit space-between alignment for desktop
    * Ensures logo stays left, navigation stays right

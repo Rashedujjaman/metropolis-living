@@ -1,72 +1,86 @@
-<section id="contact" aria-label="contact-section" class="contact-section">   
-    <div class="container">
-        <div class="header">
-            <div class="col-1">
-                <div class="hero-bubbles" role="img" aria-label="Decorative brand elements">
-                    <div class="hero-bubble hero-bubble-top" 
-                        role="button" 
-                        tabindex="0"
-                        aria-label="Interactive brand bubble - top"></div>
-                    <div class="hero-bubble hero-bubble-bottom" 
-                        role="button" 
-                        tabindex="0"
-                        aria-label="Interactive brand bubble - bottom"></div>
-                </div>
-                <p class="section-title"><b>Our Blog  </b>& Insightful Posts</p>
-            </div>
-            <div class="col-2">
-                <p class="section-subtitle">Stay Informed on the <br><b>Latest Insights</b> in Real Estate Development.</p>
-            </div>
+<section id="contact" aria-label="contact-section" class="contact-section">
+  <div class="container">
+    <div class="header">
+      <div class="col-1">
+        <div class="hero-bubbles" role="img" aria-label="Decorative brand elements">
+          <div
+            class="hero-bubble hero-bubble-top"
+            role="button"
+            tabindex="0"
+            aria-label="Interactive brand bubble - top"
+          ></div>
+          <div
+            class="hero-bubble hero-bubble-bottom"
+            role="button"
+            tabindex="0"
+            aria-label="Interactive brand bubble - bottom"
+          ></div>
         </div>
-        <div class="content"> 
-            <div class="card-wrapper">
-                <div class="card-container">
-                    <div class="card card-left">
-                        <div class="card-image">
-                            <img src="https://mir-s3-cdn-cf.behance.net/projects/404/a6934b228623591.Y3JvcCwyMTE0LDE2NTQsMTk4LDA.png" alt="Modern Real Estate Development" loading="lazy">
-                            <div class="feature-tag">Insight</div>
-                        </div>
-                        <div class="card-content">
-                            <p class="card-title">Real Estate Innovations: Pioneering The Future</p>
-                            <div class="card-date">April 30, 2025</div>
-                            
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-container">
-                    <div class="card card-right">
-                        <div class="card-image">
-                            <img src="https://archello.s3.eu-central-1.amazonaws.com/images/2020/01/16/Modern-Arabic-Villa-Architectural-Design-1.1579168023.1665.jpg" alt="Investment Opportunities" loading="lazy">
-                            <div class="feature-tag">Trends</div>
-                        </div>
-                        <div class="card-content">
-                            <p class="card-title">Real Estate Market Trends: Promising Growth</p>
-                            <div class="card-date">April 30, 2025</div>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="help-corner">
-            <div class="heading">
-                <h1 class="section-title">*Help C<div class="char-image"></div>rner</h1>
-                <p class="section-subtitle">Voluptatem accusantium doloremque Iaudan</p>
-            </div>
-            <div class="faqs">
-                <div class="faq-item" *ngFor="let faq of faqs; let i = index" [class.active]="faq.isOpen">
-                    <div class="faq-question" (click)="toggleFaq(i)">
-                        <span class="question-text">{{ faq.question }}</span>
-                        <span class="toggle-icon" [class.open]="faq.isOpen">
-                            <i class="icon"></i>
-                        </span>
-                    </div>
-                    <div class="faq-answer" [class.open]="faq.isOpen">
-                        <p>{{ faq.answer }}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <p class="section-title"><b>Our Blog </b>& Insightful Posts</p>
+      </div>
+      <div class="col-2">
+        <p class="section-subtitle">Stay Informed on the <br /><b>Latest Insights</b> in Real Estate Development.</p>
+      </div>
     </div>
+    <div class="content">
+      <div class="card-wrapper">
+        <div class="card-container">
+          <div class="card card-left">
+            <div class="card-image">
+              <img
+                src="https://mir-s3-cdn-cf.behance.net/projects/404/a6934b228623591.Y3JvcCwyMTE0LDE2NTQsMTk4LDA.png"
+                alt="Modern Real Estate Development"
+                loading="lazy"
+              />
+              <div class="feature-tag">Insight</div>
+            </div>
+            <div class="card-content">
+              <p class="card-title">Real Estate Innovations: Pioneering The Future</p>
+              <div class="card-date">April 30, 2025</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card card-right">
+            <div class="card-image">
+              <img
+                src="https://archello.s3.eu-central-1.amazonaws.com/images/2020/01/16/Modern-Arabic-Villa-Architectural-Design-1.1579168023.1665.jpg"
+                alt="Investment Opportunities"
+                loading="lazy"
+              />
+              <div class="feature-tag">Trends</div>
+            </div>
+            <div class="card-content">
+              <p class="card-title">Real Estate Market Trends: Promising Growth</p>
+              <div class="card-date">April 30, 2025</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="help-corner">
+      <div class="heading">
+        <h1 class="section-title">
+          *Help C
+          <div class="char-image"></div>
+          rner
+        </h1>
+        <p class="section-subtitle">Voluptatem accusantium doloremque Iaudan</p>
+      </div>
+      <div class="faqs">
+        <div class="faq-item" *ngFor="let faq of faqs; let i = index" [class.active]="faq.isOpen">
+          <div class="faq-question" (click)="toggleFaq(i)">
+            <span class="question-text">{{ faq.question }}</span>
+            <span class="toggle-icon" [class.open]="faq.isOpen">
+              <i class="icon"></i>
+            </span>
+          </div>
+          <div class="faq-answer" [class.open]="faq.isOpen">
+            <p>{{ faq.answer }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

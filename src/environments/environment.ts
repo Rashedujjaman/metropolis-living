@@ -6,5 +6,5 @@ export const environment = {
   enableLogging: true,
   googleMapsApiKey: 'your-google-maps-api-key',
   contactEmail: 'contact@metropolisliving.com',
-  phoneNumber: '+1 (555) 123-4567'
+  phoneNumber: '+1 (555) 123-4567',
 };

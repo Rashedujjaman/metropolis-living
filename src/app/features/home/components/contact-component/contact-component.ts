@@ -1,13 +1,13 @@
-import { Component, OnInit } from "@angular/core";
-import { HomeDataService } from "../../services/home-data.service";
-import { FAQ } from "../../models/home.model";
-import { CommonModule } from "@angular/common";
+import { Component, OnInit } from '@angular/core';
+import { HomeDataService } from '../../services/home-data.service';
+import { FAQ } from '../../models/home.model';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: "app-contact",
-  templateUrl: "./contact-component.html",
-  styleUrls: ["./contact-component.scss"],
-  imports: [CommonModule]
+  selector: 'app-contact',
+  templateUrl: './contact-component.html',
+  styleUrls: ['./contact-component.scss'],
+  imports: [CommonModule],
 })
 export class ContactComponent implements OnInit {
   faqs: FAQ[] = [];

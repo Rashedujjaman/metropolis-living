@@ -48,7 +48,6 @@ export interface Service {
   features: string[];
 }
 
-
 export interface FAQ {
   id: number;
   question: string;

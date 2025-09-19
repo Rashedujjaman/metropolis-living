@@ -6,6 +6,6 @@ import { HomeComponent } from './features/home/pages/home/home';
 export const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
-  }
+    component: HomeComponent,
+  },
 ];

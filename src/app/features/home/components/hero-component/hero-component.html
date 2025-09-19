@@ -37,28 +37,30 @@
 
 <section id="hero" class="hero-section" role="banner" aria-label="Hero section">
   <div class="container">
-    
     <!-- Hero Brand Layout: Company Identity & Rating -->
     <div class="hero-layout" role="region" aria-labelledby="hero-brand-title">
-      
       <!-- Left Division: Brand Name with Interactive Bubbles -->
       <div class="hero-left animate-fadeInRight" aria-label="Company branding">
         <div class="hero-brand">
           <!-- Primary Brand Title -->
           <h1 id="hero-brand-title" class="hero-main-title">METROPOLIS</h1>
-          
+
           <!-- Secondary Brand Line with Visual Elements -->
           <div class="hero-second-line" role="group" aria-label="Brand signature with decorative elements">
             <!-- Decorative Interactive Bubbles -->
             <div class="hero-bubbles" role="img" aria-label="Decorative brand elements">
-              <div class="hero-bubble hero-bubble-top" 
-                   role="button" 
-                   tabindex="0"
-                   aria-label="Interactive brand bubble - top"></div>
-              <div class="hero-bubble hero-bubble-bottom" 
-                   role="button" 
-                   tabindex="0"
-                   aria-label="Interactive brand bubble - bottom"></div>
+              <div
+                class="hero-bubble hero-bubble-top"
+                role="button"
+                tabindex="0"
+                aria-label="Interactive brand bubble - top"
+              ></div>
+              <div
+                class="hero-bubble hero-bubble-bottom"
+                role="button"
+                tabindex="0"
+                aria-label="Interactive brand bubble - bottom"
+              ></div>
             </div>
             <!-- Brand Tagline -->
             <h2 class="hero-living">LIVING.</h2>
@@ -68,23 +70,24 @@
 
       <!-- Right Division: Company Description and Interactive Rating -->
       <div class="hero-right animate-fadeInLeft" aria-label="Company information">
-        
         <!-- Company Mission Statement -->
         <div class="hero-description" role="region" aria-labelledby="company-description">
           <p id="company-description">
-            We are building urban communities. Connecting people, spaces, and lifestyles through exceptional real estate development.
+            We are building urban communities. Connecting people, spaces, and lifestyles through exceptional real estate
+            development.
           </p>
         </div>
-        
+
         <!-- Interactive Rating Container with Custom Geometric Design -->
-        <div class="hero-rating-container" 
-             role="button" 
-             tabindex="0"
-             aria-label="Company rating: {{ heroRating.score }} stars, {{ heroRating.text }}"
-             (click)="onRatingClick()"
-             (keydown.enter)="onRatingClick()"
-             (keydown.space)="onRatingClick()">
-          
+        <div
+          class="hero-rating-container"
+          role="button"
+          tabindex="0"
+          aria-label="Company rating: {{ heroRating.score }} stars, {{ heroRating.text }}"
+          (click)="onRatingClick()"
+          (keydown.enter)="onRatingClick()"
+          (keydown.space)="onRatingClick()"
+        >
           <div class="rating-info" aria-hidden="true">
             <div class="rating-score">
               <i class="fas fa-star" aria-hidden="true"></i>
@@ -98,37 +101,41 @@
 
     <!-- Hero Content: Video Player & Main Image Section -->
     <div class="hero-content" role="region" aria-label="Featured content">
-      
       <!-- Left Content: Video Player and Title Section -->
       <div class="left-content" aria-label="Video and content information">
-        
         <!-- Video Player Section with Call-to-Action -->
         <div class="video-section" role="region" aria-labelledby="video-heading">
           <!-- Interactive Video Player -->
-          <div class="video-player" 
-               role="button"
-               tabindex="0" 
-               aria-label="Play project showcase video"
-               (click)="playVideo()"
-               (keydown.enter)="playVideo()"
-               (keydown.space)="playVideo()">
-            
+          <div
+            class="video-player"
+            role="button"
+            tabindex="0"
+            aria-label="Play project showcase video"
+            (click)="playVideo()"
+            (keydown.enter)="playVideo()"
+            (keydown.space)="playVideo()"
+          >
             <div class="video-placeholder">
               <!-- Video Thumbnail with Alt Text -->
-              <img src="https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fcom.ft.imagepublish.upp-prod-eu.s3.amazonaws.com%2Fbcd9b316-72dc-11e5-a129-3fcc4f641d98?source=next-article&fit=scale-down&quality=highest&width=700&dpr=1" 
-                   alt="Project showcase video thumbnail - Modern urban development" 
-                   class="video-thumbnail">
-              
+              <img
+                src="https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fcom.ft.imagepublish.upp-prod-eu.s3.amazonaws.com%2Fbcd9b316-72dc-11e5-a129-3fcc4f641d98?source=next-article&fit=scale-down&quality=highest&width=700&dpr=1"
+                alt="Project showcase video thumbnail - Modern urban development"
+                class="video-thumbnail"
+              />
+
               <!-- Play Button Overlay -->
               <div class="play-button" aria-hidden="true">
                 <i class="fas fa-play" aria-hidden="true"></i>
               </div>
             </div>
           </div>
-          
+
           <!-- Video Call-to-Action Text -->
           <div class="video-text">
-            <span id="video-heading">Watch <br> our project reel!</span>
+            <span id="video-heading"
+              >Watch <br />
+              our project reel!</span
+            >
           </div>
         </div>
 
@@ -136,34 +143,37 @@
         <div class="content-title-section" role="region" aria-labelledby="main-content-title">
           <!-- Primary Content Heading -->
           <h2 id="main-content-title" class="main-title">
-            Driven By Innovation, <br> Committed To Excellence.
+            Driven By Innovation, <br />
+            Committed To Excellence.
           </h2>
-          
+
           <!-- Decorative Visual Divider -->
           <div class="divider-line" role="separator" aria-hidden="true"></div>
-          
+
           <!-- Content Subtitle -->
           <h3 class="subtitle">Enim Ipsamed Voluptatem</h3>
         </div>
       </div>
-      
+
       <!-- Right Content: Hero Image with Interactive Overlays -->
       <div class="right-content animate-fadeInUp" aria-label="Hero image section">
-        
         <!-- Main Hero Image Container with Custom Clipping -->
         <div class="hero-image-container" role="img" aria-label="Modern city skyline showcasing our developments">
-          <img src="https://img.freepik.com/free-photo/vertical-low-angle-shot-high-rise-skyscrapers-glass-facade-frankfurt-germany_181624-7114.jpg" 
-               alt="Vertical view of modern glass skyscrapers representing urban development excellence" 
-               class="hero-img">
+          <img
+            src="https://img.freepik.com/free-photo/vertical-low-angle-shot-high-rise-skyscrapers-glass-facade-frankfurt-germany_181624-7114.jpg"
+            alt="Vertical view of modern glass skyscrapers representing urban development excellence"
+            class="hero-img"
+          />
         </div>
-        
+
         <!-- Call-to-Action Overlay Container -->
         <div class="cta-overlay-container">
-          <call-action-component 
+          <call-action-component
             actionName="Get Started"
             [height]="50"
             [width]="200"
-            (actionClicked)="onGetStartedClick($event)">
+            (actionClicked)="onGetStartedClick($event)"
+          >
           </call-action-component>
         </div>
 
@@ -172,42 +182,58 @@
           <div class="decor-grid">
             <!-- Grid Pattern: 3x3 Layout with Strategic Positioning -->
             <!-- Row 1: Positions (1,2) and (1,3) -->
-            <div class="decor-square row-1 col-2" 
-                 role="button" 
-                 tabindex="0"
-                 aria-label="Decorative square element"></div>
-            <div class="decor-square row-1 col-3" 
-                 role="button" 
-                 tabindex="0"
-                 aria-label="Decorative square element"></div>
-            
+            <div
+              class="decor-square row-1 col-2"
+              role="button"
+              tabindex="0"
+              aria-label="Decorative square element"
+            ></div>
+            <div
+              class="decor-square row-1 col-3"
+              role="button"
+              tabindex="0"
+              aria-label="Decorative square element"
+            ></div>
+
             <!-- Row 2: All positions (2,1), (2,2), (2,3) -->
-            <div class="decor-square row-2 col-1" 
-                 role="button" 
-                 tabindex="0"
-                 aria-label="Decorative square element"></div>
-            <div class="decor-square row-2 col-2" 
-                 role="button" 
-                 tabindex="0"
-                 aria-label="Decorative square element"></div>
-            <div class="decor-square row-2 col-3" 
-                 role="button" 
-                 tabindex="0"
-                 aria-label="Decorative square element"></div>
-            
+            <div
+              class="decor-square row-2 col-1"
+              role="button"
+              tabindex="0"
+              aria-label="Decorative square element"
+            ></div>
+            <div
+              class="decor-square row-2 col-2"
+              role="button"
+              tabindex="0"
+              aria-label="Decorative square element"
+            ></div>
+            <div
+              class="decor-square row-2 col-3"
+              role="button"
+              tabindex="0"
+              aria-label="Decorative square element"
+            ></div>
+
             <!-- Row 3: All positions (3,1), (3,2), (3,3) -->
-            <div class="decor-square row-3 col-1" 
-                 role="button" 
-                 tabindex="0"
-                 aria-label="Decorative square element"></div>
-            <div class="decor-square row-3 col-2" 
-                 role="button" 
-                 tabindex="0"
-                 aria-label="Decorative square element"></div>
-            <div class="decor-square row-3 col-3" 
-                 role="button" 
-                 tabindex="0"
-                 aria-label="Decorative square element"></div>
+            <div
+              class="decor-square row-3 col-1"
+              role="button"
+              tabindex="0"
+              aria-label="Decorative square element"
+            ></div>
+            <div
+              class="decor-square row-3 col-2"
+              role="button"
+              tabindex="0"
+              aria-label="Decorative square element"
+            ></div>
+            <div
+              class="decor-square row-3 col-3"
+              role="button"
+              tabindex="0"
+              aria-label="Decorative square element"
+            ></div>
           </div>
         </div>
       </div>
@@ -216,33 +242,30 @@
 
   <!-- Hero Footer: Company Information Section -->
   <footer class="hero-footer" role="contentinfo" aria-label="Company information footer">
-    
     <!-- Company Image Section -->
     <div class="footer-img" role="img" aria-label="Company project showcase">
-      <img src="img_1.png" 
-           alt="Featured company project - Modern residential development" 
-           class="footer-img">
+      <img src="img_1.png" alt="Featured company project - Modern residential development" class="footer-img" />
     </div>
-    
+
     <!-- Company Logo Section -->
     <div class="footer-logo" role="img" aria-label="Company logo">
-      <img src="logo.png" 
-           alt="Metropolis Living company logo" 
-           class="footer-logo">
+      <img src="logo.png" alt="Metropolis Living company logo" class="footer-logo" />
     </div>
-    
+
     <!-- Company Details and Information -->
     <div class="footer-details" role="region" aria-label="Company establishment and details">
-      
       <!-- Establishment Information -->
       <div>
         <p class="footer-text">Est. Since 2016</p>
       </div>
-      
+
       <!-- Company Information -->
       <div class="footer-info">
         <h2>Wrbanite</h2>
-        <p class="footer-text">Home And <br> Real Estate Developer</p>  
+        <p class="footer-text">
+          Home And <br />
+          Real Estate Developer
+        </p>
       </div>
     </div>
   </footer>

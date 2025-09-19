@@ -27,175 +27,165 @@
     * .section-dark: Dark theme styling for contrast
 -->
 <section class="footer-container">
-   <footer class="footer">
-  
-  <!-- 
+  <footer class="footer">
+    <!-- 
     FOOTER CONTENT CONTAINER
     - Responsive container centers content with max-width
     - Contains main footer grid and content sections
   -->
-  <div class="container">
-    
-    <!-- 
+    <div class="container">
+      <!-- 
       FOOTER TOP SECTION
       - Primary content area with multi-column layout
       - Houses company info, navigation, and newsletter
     -->
-    <div class="footer-top">
-      
-      <!-- 
+      <div class="footer-top">
+        <!-- 
         FOOTER GRID LAYOUT
         - CSS Grid system for responsive column layout
         - Adapts from 4 columns (desktop) to 1 column (mobile)
         - Equal spacing between columns for visual balance
       -->
-      <div class="footer-grid">
-        
-        <!-- 
+        <div class="footer-grid">
+          <!-- 
           COMPANY BRANDING COLUMN
           - Primary brand representation in footer
           - Logo display with company identity
           - First column for visual hierarchy importance
         -->
-        <div class="footer-column">
-          <div class="footer-logo">
-            <!-- 
+          <div class="footer-column">
+            <div class="footer-logo">
+              <!-- 
               Company Logo
               - Brand recognition and trust building
               - Alt text for screen readers and SEO
               - Links to homepage for easy navigation
             -->
-            <img src="logo.png" alt="Metropolis Living" class="logo-img">
+              <img src="logo.png" alt="Metropolis Living" class="logo-img" />
+            </div>
           </div>
-        </div>
 
-        <!-- 
+          <!-- 
           QUICK NAVIGATION COLUMN
           - Essential site navigation links
           - Provides quick access to main sections
           - Improves site usability and SEO
         -->
-        <div class="footer-column">
-          <h4 class="footer-heading">Quick Links</h4>
-          <ul class="footer-links">
-            <!-- 
+          <div class="footer-column">
+            <h4 class="footer-heading">Quick Links</h4>
+            <ul class="footer-links">
+              <!-- 
               Navigation Links
               - Internal site navigation for main sections
               - Anchor links for smooth scrolling experience
               - Consistent with main navigation structure
             -->
-            <li><a href="#about" class="footer-link">About</a></li>
-            <li><a href="#services" class="footer-link">Service</a></li>
-            <li><a href="#projects" class="footer-link">Pricing</a></li>
-            <li><a href="#testimonials" class="footer-link">Contact</a></li>
-          </ul>
-        </div>
+              <li><a href="#about" class="footer-link">About</a></li>
+              <li><a href="#services" class="footer-link">Service</a></li>
+              <li><a href="#projects" class="footer-link">Pricing</a></li>
+              <li><a href="#testimonials" class="footer-link">Contact</a></li>
+            </ul>
+          </div>
 
-        <!-- 
+          <!-- 
           SUPPORT & LEGAL COLUMN
           - Legal compliance and user support links
           - Essential for business credibility and legal protection
           - Standard footer links expected by users
         -->
-        <div class="footer-column">
-          <h4 class="footer-heading">Support</h4>
-          <ul class="footer-links">
-            <!-- 
+          <div class="footer-column">
+            <h4 class="footer-heading">Support</h4>
+            <ul class="footer-links">
+              <!-- 
               Legal and Support Links
               - Terms & Conditions: Legal protection and user guidelines
               - Privacy Policy: GDPR and privacy compliance
               - FAQ: Self-service support resource
               - Support: Direct help and contact information
             -->
-            <li><a href="#" class="footer-link">Terms & Conditions</a></li>
-            <li><a href="#" class="footer-link">Privacy Policy</a></li>
-            <li><a href="#" class="footer-link">FAQ</a></li>
-            <li><a href="#" class="footer-link">Support</a></li>
-          </ul>
-        </div>
+              <li><a href="#" class="footer-link">Terms & Conditions</a></li>
+              <li><a href="#" class="footer-link">Privacy Policy</a></li>
+              <li><a href="#" class="footer-link">FAQ</a></li>
+              <li><a href="#" class="footer-link">Support</a></li>
+            </ul>
+          </div>
 
-        <!-- 
+          <!-- 
           NEWSLETTER SUBSCRIPTION COLUMN
           - Email marketing and user engagement
           - Lead generation and customer retention
           - Interactive form with Angular integration
         -->
-        <div class="footer-column">
-          <!-- 
+          <div class="footer-column">
+            <!-- 
             Newsletter Call-to-Action
             - Engaging copy to encourage subscriptions
             - Bold emphasis on 'Subscribe' for visual hierarchy
           -->
-          <p class="newsletter-text">
-            Stay Informed & <b class="subscribe">Subscribe</b> our blog!
-          </p>
-          
-          <!-- 
+            <p class="newsletter-text">Stay Informed & <b class="subscribe">Subscribe</b> our blog!</p>
+
+            <!-- 
             Newsletter Subscription Form
             - Angular reactive form with validation
             - (ngSubmit) handles form submission
             - Email capture for marketing campaigns
           -->
-          <form class="newsletter-form" (ngSubmit)="onSubscribe()">
-            <div class="newsletter-input-group">
-              <!-- 
+            <form class="newsletter-form" (ngSubmit)="onSubscribe()">
+              <div class="newsletter-input-group">
+                <!-- 
                 Email Input Field
                 - Two-way data binding with [(ngModel)]
                 - HTML5 email validation
                 - Required attribute for form validation
                 - Placeholder for user guidance
               -->
-              <input 
-                type="email" 
-                [(ngModel)]="email"
-                placeholder="Enter your email"
-                class="newsletter-input"
-                required
-              >
-              
-              <!-- 
+                <input
+                  type="email"
+                  [(ngModel)]="email"
+                  placeholder="Enter your email"
+                  class="newsletter-input"
+                  required
+                />
+
+                <!-- 
                 Submit Button
                 - Styled as integrated part of input group
                 - Bold text for emphasis and call-to-action
                 - Form submission triggers Angular method
               -->
-              <button type="submit" class="newsletter-btn">
-                <b>Send</b>
-              </button>
-            </div>
-          </form>
+                <button type="submit" class="newsletter-btn">
+                  <b>Send</b>
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-        
       </div>
     </div>
-  </div>
-  
-  <!-- 
+
+    <!-- 
     FOOTER BOTTOM SECTION
     - Full-width copyright and legal information
     - Positioned outside main container for edge-to-edge styling
     - Provides visual separation from main footer content
   -->
-  <div class="footer-bottom">
-    <!-- 
+    <div class="footer-bottom">
+      <!-- 
       Bottom Content Container
       - Separate container for proper content alignment
       - Centers copyright information within full-width section
     -->
-    <div class="container">
-      <div class="footer-bottom-content">
-        <!-- 
+      <div class="container">
+        <div class="footer-bottom-content">
+          <!-- 
           Copyright Notice
           - Legal copyright protection display
           - Dynamic year binding with {{ currentYear }}
           - Essential for business legal compliance
         -->
-        <p class="copyright">
-          Copyright &copy; {{ currentYear }}.
-        </p>
+          <p class="copyright">Copyright &copy; {{ currentYear }}.</p>
+        </div>
       </div>
     </div>
-  </div>
-  </footer> 
+  </footer>
 </section>
-

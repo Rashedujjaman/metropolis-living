@@ -24,9 +24,9 @@
  * - Orange bottom border for brand accent
  * - Gradient top line for subtle visual interest
  */
-.footer-container{
+.footer-container {
   position: relative; /* Establishes positioning context for child elements */
-  
+
   &::after {
     overflow: hidden;
     content: '';
@@ -41,10 +41,8 @@
   }
 }
 
-
-
 .footer {
-  background: #0A0A28 !important; /* Dark navy background - overrides Bootstrap */
+  background: #0a0a28 !important; /* Dark navy background - overrides Bootstrap */
   clip-path: polygon(50px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 50px); /* 50px triangular cutout */
   padding: var(--spacing-xxl) 0 var(--spacing-lg); /* Generous top padding, moderate bottom */
   position: relative; /* Creates positioning context for pseudo-elements */
@@ -85,7 +83,7 @@
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1.5fr; /* Proportional column sizing */
   gap: var(--spacing-xl); /* Generous spacing between columns */
-  
+
   /**
    * Tablet layout (768px - 1023px)
    * Two-column layout for balanced content distribution
@@ -94,7 +92,7 @@
     grid-template-columns: 1fr 1fr; /* Equal width columns */
     gap: var(--spacing-lg); /* Reduced gap for smaller screens */
   }
-  
+
   /**
    * Mobile layout (<768px)
    * Single column for optimal mobile experience
@@ -141,7 +139,7 @@
   font-size: 1.5rem; /* Logo text sizing */
   font-weight: 700; /* Bold brand emphasis */
   color: var(--white); /* High contrast on dark background */
-  
+
   /**
    * Mobile logo alignment
    * Centers logo for better mobile visual hierarchy
@@ -198,7 +196,7 @@
  * Provides visual feedback for user interactions
  */
 .footer-link {
-  color: #8699AC; /* Muted text color for secondary navigation */
+  color: #8699ac; /* Muted text color for secondary navigation */
   text-decoration: none; /* Removes default underline */
   font-size: 0.95rem; /* Slightly smaller than body text */
   transition: var(--transition-fast); /* Smooth hover animations */
@@ -445,7 +443,7 @@
   .footer {
     padding: var(--spacing-xl) 0 var(--spacing-md); /* Reduced mobile padding */
   }
-  
+
   /**
    * Mobile footer top section
    * Reduced bottom margin for compact mobile layout
@@ -480,7 +478,7 @@
 
   .newsletter-btn {
     padding: var(--spacing-xs) var(--spacing-sm); /* Smaller button padding */
-    
+
     b {
       font-size: 0.8rem; /* Smaller button text */
     }

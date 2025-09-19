@@ -23,28 +23,24 @@
   - Provides global navigation across all pages
 -->
 <header class="header" [class.scrolled]="isScrolled">
-  
   <!-- 
     NAVIGATION WRAPPER
     - Contains all navigation elements within responsive container
     - Semantic nav element for accessibility and SEO
   -->
   <nav class="navbar">
-    
     <!-- 
       RESPONSIVE CONTAINER
       - Centers content and applies max-width constraints
       - Consistent spacing across different screen sizes
     -->
     <div class="container">
-      
       <!-- 
         NAVBAR CONTENT LAYOUT
         - Flexbox container for logo and navigation alignment
         - Space-between layout: logo left, navigation right
       -->
       <div class="navbar-content">
-        
         <!-- 
           BRAND LOGO SECTION
           - Company branding with logo image
@@ -58,7 +54,7 @@
               - Alt text for accessibility and SEO
               - Proper semantic markup for screen readers
             -->
-            <img src="creatio.png" alt="Metropolis Living" class="logo-img">
+            <img src="creatio.png" alt="Metropolis Living" class="logo-img" />
           </a>
         </div>
 
@@ -90,8 +86,8 @@
           - Utility classes control visibility on different devices
           - ARIA label for accessibility compliance
         -->
-        <button 
-          class="mobile-menu-toggle d-mobile d-tablet" 
+        <button
+          class="mobile-menu-toggle d-mobile d-tablet"
           [class.active]="isMobileMenuOpen"
           (click)="toggleMobileMenu()"
           aria-label="Toggle menu"
@@ -105,7 +101,6 @@
           <span></span>
           <span></span>
         </button>
-        
       </div>
     </div>
   </nav>
@@ -117,14 +112,12 @@
     - Hidden by default, shown when hamburger is clicked
   -->
   <div class="mobile-menu" [class.active]="isMobileMenuOpen">
-    
     <!-- 
       Mobile Menu Content Container
       - Proper padding and scrollable content
       - Optimized for touch interactions
     -->
     <div class="mobile-menu-content">
-      
       <!-- 
         Mobile Navigation Links
         - Vertical layout optimized for mobile
@@ -143,8 +136,6 @@
         <li><a href="#services" class="mobile-nav-link" (click)="scrollToMobile('services')">Services</a></li>
         <li><a href="#contact" class="mobile-nav-link" (click)="scrollToMobile('contact')">Contact</a></li>
       </ul>
-      
     </div>
   </div>
-  
 </header>

@@ -2,34 +2,34 @@
  * ============================================================================
  * HERO COMPONENT - METROPOLIS LIVING LANDING PAGE
  * ============================================================================
- * 
+ *
  * COMPONENT OVERVIEW:
- * The HeroComponent serves as the primary landing section for the Metropolis 
+ * The HeroComponent serves as the primary landing section for the Metropolis
  * Living website, featuring a sophisticated multi-section layout that includes:
  * - Brand identity section with interactive animated elements
- * - Company rating display with custom geometric design  
+ * - Company rating display with custom geometric design
  * - Video content player with call-to-action functionality
  * - Main hero image with overlay interactions
  * - Company information footer section
- * 
+ *
  * ARCHITECTURE PATTERN:
  * - Pure presentation component with minimal business logic
  * - Event-driven interactions with proper accessibility support
  * - Responsive design implementation across all viewport sizes
  * - Performance-optimized with lazy loading and efficient rendering
- * 
+ *
  * RESPONSIVE BREAKPOINTS:
  * - Desktop: 1200px+ (Full horizontal layout)
  * - Tablet: 1024px (Optimized spacing, maintained structure)
  * - Mobile: 768px (Vertical stacking with reordered sections)
  * - Small Mobile: 480px (Compact design with essential content)
- * 
+ *
  * ACCESSIBILITY COMPLIANCE:
  * - WCAG 2.1 AA compliant with proper ARIA labels
  * - Keyboard navigation support for all interactive elements
  * - Screen reader optimized content structure
  * - Motion reduction support for accessibility preferences
- * 
+ *
  * @author Metropolis Living Development Team
  * @version 1.2.0
  * @since Angular 17+
@@ -39,7 +39,7 @@
 
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import { CallActionComponent } from "../call-action-component/call-action-component";
+import { CallActionComponent } from '../call-action-component/call-action-component';
 
 /**
  * Interface defining the structure of hero rating data
@@ -54,18 +54,18 @@ export interface HeroRatingData {
 
 /**
  * HeroComponent - Main landing page hero section component
- * 
+ *
  * This component manages the primary hero section of the Metropolis Living
  * website, providing an engaging and interactive introduction to the company's
  * services and brand identity.
- * 
+ *
  * COMPONENT RESPONSIBILITIES:
  * - Display company branding and identity
- * - Show interactive rating information  
+ * - Show interactive rating information
  * - Handle video player interactions
  * - Manage call-to-action functionality
  * - Provide responsive layout across all devices
- * 
+ *
  * USAGE EXAMPLE:
  * ```html
  * <hero-component></hero-component>
@@ -75,18 +75,17 @@ export interface HeroRatingData {
   selector: 'hero-component',
   templateUrl: './hero-component.html',
   styleUrls: ['./hero-component.scss'],
-  imports: [CallActionComponent]
+  imports: [CallActionComponent],
 })
 export class HeroComponent implements OnInit, OnDestroy {
-  
   // ============================================================================
   // COMPONENT STATE PROPERTIES
   // ============================================================================
-  
+
   /**
    * Hero rating configuration object
    * Contains the company rating score and descriptive text
-   * 
+   *
    * @type {HeroRatingData}
    * @readonly
    * @example
@@ -99,13 +98,13 @@ export class HeroComponent implements OnInit, OnDestroy {
    */
   public readonly heroRating: HeroRatingData = {
     score: 4.8,
-    text: 'High Rated'
+    text: 'High Rated',
   };
 
   /**
    * Flag to track video player state
    * Used to manage video playing status and UI updates
-   * 
+   *
    * @type {boolean}
    * @private
    */
@@ -118,17 +117,15 @@ export class HeroComponent implements OnInit, OnDestroy {
   /**
    * Component constructor
    * Initializes necessary services and dependencies
-   * 
+   *
    * @param {Router} router - Angular router service for navigation
    */
-  constructor(
-    private router: Router
-  ) {}
+  constructor(private router: Router) {}
 
   /**
    * OnInit lifecycle hook
    * Performs component initialization tasks
-   * 
+   *
    * @returns {void}
    */
   ngOnInit(): void {
@@ -139,7 +136,7 @@ export class HeroComponent implements OnInit, OnDestroy {
   /**
    * OnDestroy lifecycle hook
    * Performs cleanup operations when component is destroyed
-   * 
+   *
    * @returns {void}
    */
   ngOnDestroy(): void {
@@ -147,19 +144,19 @@ export class HeroComponent implements OnInit, OnDestroy {
     this.cleanupComponent();
   }
 
- /**
- * Handles call-to-action button clicks from the overlay component
- * @param actionName - The name of the action that was clicked
- */
+  /**
+   * Handles call-to-action button clicks from the overlay component
+   * @param actionName - The name of the action that was clicked
+   */
   onGetStartedClick(actionName: string): void {
     console.log(`Hero CTA clicked: ${actionName}`);
-    
+
     // Handle the action - could navigate to contact form, etc.
     // Example: this.router.navigate(['/contact']);
-    
+
     // Analytics tracking
     // Example: this.analytics.track('hero_cta_clicked', { action: actionName });
-    
+
     // Scroll to contact section or perform other actions
     const contactSection = document.getElementById('contact');
     if (contactSection) {
@@ -174,17 +171,17 @@ export class HeroComponent implements OnInit, OnDestroy {
   /**
    * Handles rating container click interactions
    * Provides user feedback and potential navigation to rating details
-   * 
+   *
    * This method is triggered when users interact with the rating section,
    * either through mouse clicks or keyboard navigation (Enter/Space keys).
-   * 
+   *
    * @public
    * @returns {void}
    * @since 1.0.0
-   * 
+   *
    * @example
    * ```html
-   * <div (click)="onRatingClick()" 
+   * <div (click)="onRatingClick()"
    *      (keydown.enter)="onRatingClick()"
    *      (keydown.space)="onRatingClick()">
    *   Rating Content
@@ -195,15 +192,14 @@ export class HeroComponent implements OnInit, OnDestroy {
     try {
       // Log interaction for analytics
       console.log(`Hero rating clicked - Score: ${this.heroRating.score}`);
-      
+
       // Potential future implementation:
       // - Navigate to reviews/testimonials page
       // - Open rating details modal
       // - Track user engagement metrics
-      
+
       // For now, provide user feedback
       this.showRatingFeedback();
-      
     } catch (error) {
       console.error('Error handling rating click:', error);
     }
@@ -212,17 +208,17 @@ export class HeroComponent implements OnInit, OnDestroy {
   /**
    * Handles video player interactions
    * Manages video playback state and user interface updates
-   * 
+   *
    * This method controls video playback functionality, including play/pause
    * states, loading indicators, and error handling for video content.
-   * 
+   *
    * @public
    * @returns {void}
    * @since 1.0.0
-   * 
+   *
    * @example
    * ```html
-   * <div class="video-player" 
+   * <div class="video-player"
    *      (click)="playVideo()"
    *      (keydown.enter)="playVideo()">
    *   Video Content
@@ -233,12 +229,12 @@ export class HeroComponent implements OnInit, OnDestroy {
     try {
       // Toggle video playing state
       this.isVideoPlaying = !this.isVideoPlaying;
-      
+
       if (this.isVideoPlaying) {
         console.log('Starting video playback');
         // Future implementation: Initialize video player
         // - Load video source
-        // - Show loading indicator  
+        // - Show loading indicator
         // - Handle video events
         this.startVideoPlayback();
       } else {
@@ -246,13 +242,11 @@ export class HeroComponent implements OnInit, OnDestroy {
         // Future implementation: Pause video
         this.pauseVideoPlayback();
       }
-      
     } catch (error) {
       console.error('Error handling video playback:', error);
       this.handleVideoError();
     }
   }
-
 
   // ============================================================================
   // PRIVATE UTILITY METHODS
@@ -260,7 +254,7 @@ export class HeroComponent implements OnInit, OnDestroy {
 
   /**
    * Initializes component state and configuration
-   * 
+   *
    * @private
    * @returns {void}
    */
@@ -272,7 +266,7 @@ export class HeroComponent implements OnInit, OnDestroy {
 
   /**
    * Performs component cleanup operations
-   * 
+   *
    * @private
    * @returns {void}
    */
@@ -286,7 +280,7 @@ export class HeroComponent implements OnInit, OnDestroy {
 
   /**
    * Provides visual feedback for rating interactions
-   * 
+   *
    * @private
    * @returns {void}
    */
@@ -298,7 +292,7 @@ export class HeroComponent implements OnInit, OnDestroy {
 
   /**
    * Handles video playback start operations
-   * 
+   *
    * @private
    * @returns {void}
    */
@@ -309,7 +303,7 @@ export class HeroComponent implements OnInit, OnDestroy {
 
   /**
    * Handles video playback pause operations
-   * 
+   *
    * @private
    * @returns {void}
    */
@@ -321,7 +315,7 @@ export class HeroComponent implements OnInit, OnDestroy {
 
   /**
    * Handles video playback errors
-   * 
+   *
    * @private
    * @returns {void}
    */
@@ -332,7 +326,7 @@ export class HeroComponent implements OnInit, OnDestroy {
 
   /**
    * Tracks conversion events for analytics
-   * 
+   *
    * @private
    * @returns {void}
    */
@@ -343,7 +337,7 @@ export class HeroComponent implements OnInit, OnDestroy {
 
   /**
    * Handles navigation errors gracefully
-   * 
+   *
    * @private
    * @returns {void}
    */
